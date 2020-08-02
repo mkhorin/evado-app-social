@@ -1,0 +1,36 @@
+
+<div class="page" data-page="photo" data-handler="PhotoPage">
+
+    <div class="photo loadable-container" data-handler="Photo">
+
+        <template data-id="photo">
+            <div class="page-head">
+                <ol class="breadcrumb">
+                    <li><a href="#" data-action="main" data-t="">Main</a></li>
+                    <li><a href="#" data-action="member" data-id="{{owner}}" data-t="">Member</a></li>
+                    <li><a href="#" data-action="album" data-id="{{album}}" data-t="">Album</a></li>
+                    <li data-t="">Photo</li>
+                </ol>
+                <%- include('./_account') %>
+            </div>
+
+            <img data-src="<%- _url('/api/base/file/thumbnail') %>?c=photo&id={{_id}}"
+                 class="thumbnail thumbnail-center img-responsive" alt="{{name}}">
+
+            <h1>{{name}}</h1>
+            <h4>{{text}}</h4>
+
+             <div class="block mt40">
+                 <h3 class="block-title" data-t="">Photo comments</h3>
+                 <%- include('./_photoComments') %>
+            </div>
+        </template>
+
+        <template data-id="error">
+            <div class="alert-danger alert">{{text}}</div>
+        </template>
+
+        <div class="loadable-content"></div>
+        <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
+    </div>
+</div>

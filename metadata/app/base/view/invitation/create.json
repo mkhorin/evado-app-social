@@ -1,0 +1,18 @@
+{
+  "description": "Default create",
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "sender",
+      "orderNumber": 20
+    },
+    {
+      "name": "recipient",
+      "orderNumber": 30
+    },
+    {
+      "name": "text",
+      "orderNumber": 40
+    }
+  ]
+}

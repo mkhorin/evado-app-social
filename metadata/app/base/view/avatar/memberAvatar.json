@@ -1,0 +1,10 @@
+{
+  "label": "Member avatar",
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "file",
+      "orderNumber": 10
+    }
+  ]
+}

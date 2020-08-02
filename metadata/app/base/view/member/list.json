@@ -1,0 +1,15 @@
+{
+  "description": "Default list",
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "name",
+      "orderNumber": 10
+    },
+    {
+      "name": "avatar",
+      "orderNumber": 20,
+      "viewType": "thumbnail"
+    }
+  ]
+}

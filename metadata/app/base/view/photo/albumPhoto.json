@@ -1,0 +1,23 @@
+{
+  "label": "Album photo",
+  "readOnly": true,
+  "attrs": [
+    {
+      "name": "file",
+      "orderNumber": 10
+    },
+    {
+      "name": "name",
+      "orderNumber": 20
+    },
+    {
+      "name": "text",
+      "orderNumber": 30
+    },
+    {
+      "name": "owner",
+      "eagerLoading": false,
+      "orderNumber": 50
+    }
+  ]
+}

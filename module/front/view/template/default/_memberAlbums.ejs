@@ -1,0 +1,35 @@
+
+<div class="album-list loadable-container" data-handler="MemberAlbumList" data-member="{{_id}}">
+
+    <template data-id="list">
+        <div class="album-items">##items##</div>
+    </template>
+
+    <template data-id="item">
+        <div class="album-card" data-id="##_id##">
+            <h3>
+                <a href="#" data-action="album">##name##</a>
+            </h3>
+            <p>##description##</p>
+            <p>
+                <span data-t="">Photos:</span>
+                <b>##photoCounter##</b>
+            </p>
+        </div>
+    </template>
+
+    <%- include('./_pagination', {start: '##', end: '##'}) %>
+
+    <template data-id="empty">
+        <div class="alert-warning alert">
+            <span data-t="">No albums available</span>
+        </div>
+    </template>
+
+    <template data-id="error">
+        <div class="alert-danger alert">##text##</div>
+    </template>
+
+    <div class="loadable-content"></div>
+    <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
+</div>

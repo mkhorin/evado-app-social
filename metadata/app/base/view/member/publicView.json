@@ -1,0 +1,31 @@
+{
+  "readOnly": true,
+  "attrs": [
+    {
+      "name": "name",
+      "orderNumber": 10
+    },
+    {
+      "name": "avatar",
+      "orderNumber": 20
+    },
+    {
+      "name": "photoCounter",
+      "orderNumber": 30
+    },
+    {
+      "name": "albums",
+      "orderNumber": 40
+    },
+    {
+      "name": "friendStatus",
+      "orderNumber": 50
+    },
+    {
+      "name": "friendMembers",
+      "group": "friends",
+      "listView": "publicList",
+      "orderNumber": 60
+    }
+  ]
+}

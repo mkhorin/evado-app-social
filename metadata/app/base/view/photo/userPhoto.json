@@ -1,0 +1,21 @@
+{
+  "label": "User photo",
+  "filter": {
+    "owner": "$user.meta.base.member"
+  },
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "file",
+      "orderNumber": 10
+    },
+    {
+      "name": "name",
+      "orderNumber": 20
+    },
+    {
+      "name": "text",
+      "orderNumber": 30
+    }
+  ]
+}

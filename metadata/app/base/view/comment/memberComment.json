@@ -1,0 +1,24 @@
+{
+  "label": "Member comment",
+  "readOnly": true,
+  "attrs": [
+    {
+      "name": "album",
+      "eagerLoading": true,
+      "orderNumber": 10
+    },
+    {
+      "name": "photo",
+      "eagerLoading": true,
+      "orderNumber": 20
+    },
+    {
+      "name": "text",
+      "orderNumber": 30
+    },
+    {
+      "name": "_createdAt",
+      "orderNumber": 50
+    }
+  ]
+}

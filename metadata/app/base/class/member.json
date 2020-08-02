@@ -1,0 +1,481 @@
+{
+  "abstract": false,
+  "header": ".name",
+  "label": "Member",
+  "attrs": [
+    {
+      "name": "user",
+      "label": "User",
+      "type": "user",
+      "commonSearchable": true,
+      "eagerLoading": true,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 10,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": true,
+      "trim": true,
+      "unique": true
+    },
+    {
+      "name": "name",
+      "label": "Name",
+      "type": "string",
+      "commonSearchable": true,
+      "defaultValue": "$user.getTitle",
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 20,
+      "sortable": true,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": true,
+      "trim": true,
+      "unique": true,
+      "rules": [
+        {
+          "type": "regex",
+          "orderNumber": 10,
+          "description": "Check owner name",
+          "pattern": "^[a-z0-9а-я\\s-]+$",
+          "flags": "i",
+          "mismatch": false
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "label": "Avatar",
+      "type": "ref",
+      "commands": [
+        "create",
+        "edit",
+        "delete"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "group": "main",
+      "hidden": false,
+      "history": false,
+      "listView": "memberAvatar",
+      "multiple": false,
+      "onDelete": "null",
+      "orderNumber": 30,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "avatar",
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "friendStatus",
+      "label": "Friend status",
+      "type": "calc",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "expression": {
+        "Class": "component/meta/expression/FriendStatusExpression"
+      },
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 40,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": true,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "enums": [
+        {
+          "items": [
+            {
+              "value": "friend",
+              "text": "Friend",
+              "orderNumber": 10
+            },
+            {
+              "value": "pending",
+              "text": "Waiting for a response",
+              "hint": "Invitation has been sent",
+              "orderNumber": 20
+            },
+            {
+              "value": "no",
+              "text": "Not a friend yet",
+              "orderNumber": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "friends",
+      "label": "Friends",
+      "type": "backref",
+      "commands": [
+        "edit"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "filter": {
+        "Class": "component/meta/relation/Friends"
+      },
+      "group": "friends",
+      "hidden": false,
+      "history": false,
+      "multiple": true,
+      "options": {
+        "css": "no-label"
+      },
+      "orderNumber": 50,
+      "sortable": false,
+      "sortableRelation": false,
+      "refAttr": "initiator",
+      "refClass": "friend",
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "friendMembers",
+      "label": "Friend members",
+      "type": "backref",
+      "commands": [
+        "edit"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "filter": {
+        "Class": "component/meta/relation/FriendMembers"
+      },
+      "hidden": false,
+      "history": false,
+      "multiple": true,
+      "options": {
+        "css": "no-label"
+      },
+      "orderNumber": 60,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "member",
+      "readOnly": true,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "ownComments",
+      "label": "Own comments",
+      "type": "backref",
+      "description": "Member's own comments",
+      "commands": [
+        "edit"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "group": "ownComments",
+      "hidden": false,
+      "history": false,
+      "listView": "memberComment",
+      "multiple": true,
+      "options": {
+        "css": "no-label",
+        "relation": {
+          "showTop": true
+        }
+      },
+      "orderNumber": 70,
+      "sortable": false,
+      "sortableRelation": false,
+      "refAttr": "author",
+      "refClass": "comment",
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "relatedComments",
+      "label": "Related comments",
+      "type": "backref",
+      "description": "Comments of all member's album and photos",
+      "commands": [
+        "edit"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "filter": {
+        "Class": "component/meta/relation/RelatedComments"
+      },
+      "group": "relatedComments",
+      "hidden": false,
+      "history": false,
+      "multiple": true,
+      "options": {
+        "css": "no-label",
+        "relation": {
+          "showTop": true
+        }
+      },
+      "orderNumber": 80,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "comment",
+      "readOnly": true,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "photoCounter",
+      "label": "Photo counter",
+      "type": "calc",
+      "description": "Total number of user uploaded photos",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "expression": [
+        "$count",
+        "photo",
+        {
+          "owner": ".$key"
+        }
+      ],
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 90,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": true,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "albums",
+      "label": "Albums",
+      "type": "backref",
+      "commands": [
+        "create",
+        "edit",
+        "delete"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "group": "albums",
+      "hidden": false,
+      "history": false,
+      "listView": "memberAlbum",
+      "multiple": true,
+      "options": {
+        "css": "no-label"
+      },
+      "orderNumber": 100,
+      "sortable": false,
+      "sortableRelation": false,
+      "refAttr": "owner",
+      "refClass": "album",
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "photos",
+      "label": "Photos",
+      "type": "backref",
+      "commands": [
+        "create",
+        "edit",
+        "delete"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "group": "photos",
+      "hidden": false,
+      "history": false,
+      "multiple": true,
+      "options": {
+        "css": "no-label",
+        "relation": {
+          "showTop": true
+        }
+      },
+      "orderNumber": 110,
+      "sortable": false,
+      "sortableRelation": false,
+      "refAttr": "owner",
+      "refClass": "photo",
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "incomingInvitations",
+      "label": "Incoming invitations",
+      "type": "backref",
+      "commands": [
+        "edit"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "group": "incoming",
+      "hidden": false,
+      "history": false,
+      "listView": "incomingList",
+      "multiple": true,
+      "options": {
+        "css": "no-label"
+      },
+      "orderNumber": 120,
+      "sortable": false,
+      "sortableRelation": false,
+      "refAttr": "recipient",
+      "refClass": "invitation",
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "outgoingInvitations",
+      "label": "Outgoing invitations",
+      "type": "backref",
+      "commands": [
+        "create",
+        "edit",
+        "delete"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "group": "outgoing",
+      "hidden": false,
+      "history": false,
+      "listView": "outgoingList",
+      "multiple": true,
+      "options": {
+        "css": "no-label"
+      },
+      "orderNumber": 130,
+      "sortable": false,
+      "sortableRelation": false,
+      "refAttr": "sender",
+      "refClass": "invitation",
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    }
+  ],
+  "groups": [
+    {
+      "name": "tabs",
+      "label": "Tabs",
+      "orderNumber": 1000,
+      "readOnly": false,
+      "required": false,
+      "type": "tabs"
+    },
+    {
+      "active": true,
+      "name": "main",
+      "label": "Main",
+      "orderNumber": 1010,
+      "parent": "tabs",
+      "readOnly": false,
+      "required": false
+    },
+    {
+      "name": "albums",
+      "label": "Albums",
+      "orderNumber": 1020,
+      "parent": "tabs",
+      "readOnly": false,
+      "required": false
+    },
+    {
+      "name": "relatedComments",
+      "label": "Related comments",
+      "orderNumber": 1030,
+      "parent": "tabs",
+      "readOnly": false,
+      "required": false
+    },
+    {
+      "name": "ownComments",
+      "label": "Own comments",
+      "orderNumber": 1040,
+      "parent": "tabs",
+      "readOnly": false,
+      "required": false
+    },
+    {
+      "name": "friends",
+      "label": "Friends",
+      "orderNumber": 1050,
+      "parent": "tabs",
+      "readOnly": false,
+      "required": false
+    },
+    {
+      "name": "incoming",
+      "label": "Incoming invitations",
+      "orderNumber": 1060,
+      "parent": "tabs",
+      "readOnly": false,
+      "required": false
+    },
+    {
+      "name": "outgoing",
+      "label": "Outgoing invitations",
+      "orderNumber": 1070,
+      "parent": "tabs",
+      "readOnly": false,
+      "required": false
+    },
+    {
+      "name": "photos",
+      "label": "Photos",
+      "orderNumber": 1080,
+      "parent": "tabs",
+      "readOnly": false,
+      "required": false
+    }
+  ]
+}

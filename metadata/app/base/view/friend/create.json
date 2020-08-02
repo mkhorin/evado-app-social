@@ -1,0 +1,15 @@
+{
+  "description": "Default create",
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "initiator",
+      "eagerLoading": true,
+      "orderNumber": 10
+    },
+    {
+      "name": "invitee",
+      "orderNumber": 10
+    }
+  ]
+}

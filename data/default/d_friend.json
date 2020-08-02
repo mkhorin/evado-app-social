@@ -1,0 +1,56 @@
+[
+  {
+    "_id": {
+      "$oid": "5f24cc338b23080fe8800d35"
+    },
+    "initiator": {
+      "$oid": "5f24bd824d618d12d44b3bd7"
+    },
+    "invitee": {
+      "$oid": "5f24bc814d618d12d44b3bc7"
+    },
+    "_creator": {
+      "$oid": "5f24bc814d618d12d44b3bc5"
+    },
+    "_class": "friend",
+    "_createdAt": {
+      "$date": "2020-08-01T01:58:11.338Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f24cd678b23080fe8800d42"
+    },
+    "initiator": {
+      "$oid": "5f24bc814d618d12d44b3bc7"
+    },
+    "invitee": {
+      "$oid": "5f24b7b54d618d12d44b3ba0"
+    },
+    "_creator": {
+      "$oid": "5f24b7b54d618d12d44b3b9e"
+    },
+    "_class": "friend",
+    "_createdAt": {
+      "$date": "2020-08-01T02:03:19.944Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f24ce7f8b23080fe8800d4f"
+    },
+    "initiator": {
+      "$oid": "5f24b7b54d618d12d44b3ba0"
+    },
+    "invitee": {
+      "$oid": "5f24bb714d618d12d44b3bb4"
+    },
+    "_creator": {
+      "$oid": "5f24bb714d618d12d44b3bb2"
+    },
+    "_class": "friend",
+    "_createdAt": {
+      "$date": "2020-08-01T02:07:59.904Z"
+    }
+  }
+]

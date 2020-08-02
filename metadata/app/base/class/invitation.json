@@ -1,0 +1,195 @@
+{
+  "abstract": false,
+  "description": "Invitation to be friends",
+  "label": "Invitation",
+  "attrs": [
+    {
+      "name": "_state",
+      "label": "State",
+      "type": "string",
+      "viewType": "state",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": false,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 10,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": true,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "sender",
+      "label": "Sender",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "description": "Inviting member",
+      "commands": [
+        "add",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "defaultValue": "$user.meta.base.member",
+      "eagerLoading": true,
+      "eagerView": "title",
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "cascade",
+      "orderNumber": 20,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "member",
+      "readOnly": true,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "recipient",
+      "label": "Recipient",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "description": "Invited member",
+      "commands": [
+        "add",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": true,
+      "eagerView": "title",
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "cascade",
+      "orderNumber": 30,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "member",
+      "readOnly": false,
+      "required": true,
+      "selectListView": "title",
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "rules": [
+        {
+          "type": "custom",
+          "orderNumber": 10,
+          "config": {
+            "Class": "component/meta/validator/RecipientValidator"
+          }
+        }
+      ]
+    },
+    {
+      "name": "text",
+      "label": "Text",
+      "type": "text",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 40,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "_createdAt",
+      "label": "Created at",
+      "type": "date",
+      "viewType": "localDatetime",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 50,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": true,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    }
+  ],
+  "behaviors": [
+    {
+      "type": "custom",
+      "orderNumber": 10,
+      "config": {
+        "Class": "component/meta/behavior/InvitationBehavior"
+      }
+    }
+  ],
+  "states": [
+    {
+      "name": "accepted",
+      "label": "Accepted",
+      "defaults": false,
+      "description": "Invitee agreed to be friends",
+      "readOnly": true
+    },
+    {
+      "name": "declined",
+      "label": "Declined",
+      "defaults": false,
+      "description": "Invitee refused to be friends",
+      "readOnly": true
+    },
+    {
+      "name": "pending",
+      "label": "Pending",
+      "defaults": true,
+      "readOnly": true
+    }
+  ],
+  "transitions": [
+    {
+      "name": "accept",
+      "label": "Accept",
+      "description": "Agree to be friends",
+      "nullStartState": false,
+      "startStates": [
+        "declined",
+        "pending"
+      ],
+      "finalState": "accepted",
+      "condition": {
+        "recipient": "$user.meta.base.member"
+      },
+      "orderNumber": 10
+    },
+    {
+      "name": "decline",
+      "label": "Decline",
+      "description": "Refuse to be friends",
+      "nullStartState": false,
+      "startStates": [
+        "pending"
+      ],
+      "finalState": "declined",
+      "condition": {
+        "recipient": "$user.meta.base.member"
+      },
+      "orderNumber": 20
+    }
+  ]
+}

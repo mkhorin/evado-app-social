@@ -1,0 +1,157 @@
+{
+  "abstract": false,
+  "label": "Comment",
+  "attrs": [
+    {
+      "name": "album",
+      "label": "Album",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "description": "Comment target",
+      "commands": [
+        "add",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "cascade",
+      "orderNumber": 10,
+      "actionBinder": {
+        "show": [
+          "NOT EMPTY",
+          "album"
+        ]
+      },
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "album",
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "rules": [
+        {
+          "type": "custom",
+          "orderNumber": 10,
+          "description": "Comment target must be an album or photo",
+          "config": {
+            "Class": "component/meta/validator/CommentTargetValidator"
+          }
+        }
+      ]
+    },
+    {
+      "name": "photo",
+      "label": "Photo",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "description": "Comment target",
+      "commands": [
+        "add",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "cascade",
+      "orderNumber": 20,
+      "actionBinder": {
+        "show": [
+          "NOT EMPTY",
+          "photo"
+        ]
+      },
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "photo",
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "text",
+      "label": "Text",
+      "type": "text",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 30,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "rules": [
+        {
+          "type": "string",
+          "orderNumber": 10,
+          "max": 1000,
+          "min": 5
+        }
+      ]
+    },
+    {
+      "name": "author",
+      "label": "Author",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "commands": [
+        "edit"
+      ],
+      "commonSearchable": false,
+      "defaultValue": "$user.meta.base.member",
+      "eagerLoading": true,
+      "eagerView": "title",
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "cascade",
+      "orderNumber": 40,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "member",
+      "readOnly": true,
+      "required": true,
+      "selectListView": "title",
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "_createdAt",
+      "label": "Created at",
+      "type": "date",
+      "viewType": "localDatetime",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 50,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": true,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    }
+  ]
+}

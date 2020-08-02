@@ -1,0 +1,290 @@
+{
+  "abstract": false,
+  "description": "Container for photos",
+  "header": ".name",
+  "label": "Album",
+  "attrs": [
+    {
+      "name": "name",
+      "label": "Name",
+      "type": "string",
+      "commonSearchable": true,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 10,
+      "sortable": true,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": true,
+      "trim": true,
+      "unique": false,
+      "rules": [
+        {
+          "type": "unique",
+          "orderNumber": 10,
+          "filter": "owner",
+          "ignoreCase": true
+        }
+      ]
+    },
+    {
+      "name": "description",
+      "label": "Description",
+      "type": "text",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 20,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "access",
+      "label": "Access",
+      "type": "string",
+      "viewType": "radioList",
+      "commonSearchable": false,
+      "defaultValue": "none",
+      "eagerLoading": false,
+      "escape": true,
+      "group": "access",
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 30,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "enums": [
+        {
+          "items": [
+            {
+              "value": "none",
+              "text": "None",
+              "orderNumber": 10
+            },
+            {
+              "value": "friends",
+              "text": "Friends",
+              "orderNumber": 20
+            },
+            {
+              "value": "some",
+              "text": "Some members",
+              "orderNumber": 30
+            },
+            {
+              "value": "all",
+              "text": "All",
+              "orderNumber": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "members",
+      "label": "Members",
+      "type": "ref",
+      "commands": [
+        "add",
+        "remove",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "group": "access",
+      "hidden": false,
+      "history": false,
+      "listView": "publicList",
+      "multiple": true,
+      "onDelete": "null",
+      "orderNumber": 40,
+      "actionBinder": {
+        "show": {
+          "access": "some"
+        }
+      },
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "member",
+      "readOnly": false,
+      "required": false,
+      "selectListView": "publicList",
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "owner",
+      "label": "Owner",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "commands": [
+        "edit"
+      ],
+      "commonSearchable": false,
+      "defaultValue": "$user.meta.base.member",
+      "eagerLoading": true,
+      "eagerView": "title",
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "cascade",
+      "orderNumber": 50,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "member",
+      "readOnly": true,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "photos",
+      "label": "Photos",
+      "type": "backref",
+      "commands": [
+        "add",
+        "remove",
+        "create",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "group": "photos",
+      "hidden": false,
+      "history": false,
+      "multiple": true,
+      "options": {
+        "css": "no-label"
+      },
+      "orderNumber": 60,
+      "sortable": false,
+      "sortableRelation": false,
+      "refAttr": "albums",
+      "refClass": "photo",
+      "readOnly": false,
+      "required": false,
+      "selectListView": "userPhoto",
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "comments",
+      "label": "Comments",
+      "type": "backref",
+      "commands": [
+        "create",
+        "edit",
+        "delete"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "group": "comments",
+      "hidden": false,
+      "history": false,
+      "listView": "relatedComment",
+      "multiple": true,
+      "options": {
+        "css": "no-label",
+        "relation": {
+          "createOnReadOnly": true
+        }
+      },
+      "orderNumber": 70,
+      "sortable": false,
+      "sortableRelation": false,
+      "refAttr": "album",
+      "refClass": "comment",
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "photoCounter",
+      "label": "Photo counter",
+      "type": "calc",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "expression": [
+        "$count",
+        "photo",
+        {
+          "albums": ".$key"
+        }
+      ],
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 80,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": true,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    }
+  ],
+  "groups": [
+    {
+      "name": "tabs",
+      "label": "Tabs",
+      "orderNumber": 1000,
+      "readOnly": false,
+      "required": false,
+      "type": "tabs"
+    },
+    {
+      "active": true,
+      "name": "photos",
+      "label": "Photos",
+      "orderNumber": 1010,
+      "parent": "tabs",
+      "readOnly": false,
+      "required": false
+    },
+    {
+      "name": "comments",
+      "label": "Comments",
+      "orderNumber": 1020,
+      "parent": "tabs",
+      "readOnly": false,
+      "required": false
+    },
+    {
+      "name": "access",
+      "label": "Access",
+      "orderNumber": 1030,
+      "parent": "tabs",
+      "readOnly": false,
+      "required": false
+    }
+  ]
+}

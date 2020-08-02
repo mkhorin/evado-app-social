@@ -1,0 +1,30 @@
+{
+  "description": "Default  edit",
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "album",
+      "eagerLoading": true,
+      "orderNumber": 10,
+      "readOnly": true
+    },
+    {
+      "name": "photo",
+      "eagerLoading": true,
+      "orderNumber": 20,
+      "readOnly": true
+    },
+    {
+      "name": "text",
+      "orderNumber": 30
+    },
+    {
+      "name": "author",
+      "orderNumber": 40
+    },
+    {
+      "name": "_createdAt",
+      "orderNumber": 50
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "description": "Default edit",
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "name",
+      "orderNumber": 10
+    },
+    {
+      "name": "description",
+      "orderNumber": 20
+    },
+    {
+      "name": "access",
+      "orderNumber": 30
+    },
+    {
+      "name": "members",
+      "orderNumber": 40
+    },
+    {
+      "name": "owner",
+      "orderNumber": 50
+    },
+    {
+      "name": "photos",
+      "orderNumber": 60
+    },
+    {
+      "name": "comments",
+      "orderNumber": 70
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "description": "Default edit",
+  "readOnly": true,
+  "attrs": [
+    {
+      "name": "initiator",
+      "eagerLoading": true,
+      "orderNumber": 10
+    },
+    {
+      "name": "invitee",
+      "eagerLoading": true,
+      "orderNumber": 10
+    },
+    {
+      "name": "_createdAt",
+      "orderNumber": 20
+    }
+  ]
+}

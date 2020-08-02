@@ -1,0 +1,19 @@
+{
+  "description": "User member",
+  "filter": {
+    "user": "$user"
+  },
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "name",
+      "orderNumber": 10
+    },
+    {
+      "name": "avatar",
+      "eagerLoading": true,
+      "orderNumber": 20,
+      "viewType": "thumbnail"
+    }
+  ]
+}

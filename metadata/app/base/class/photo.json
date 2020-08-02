@@ -1,0 +1,193 @@
+{
+  "abstract": false,
+  "header": ".name",
+  "label": "Photo",
+  "attrs": [
+    {
+      "name": "file",
+      "label": "File",
+      "type": "file",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 10,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "name",
+      "label": "Name",
+      "type": "string",
+      "commonSearchable": true,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 20,
+      "sortable": true,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": true,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "text",
+      "label": "Text",
+      "type": "text",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 30,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "albums",
+      "label": "Albums",
+      "type": "ref",
+      "commands": [
+        "add",
+        "remove",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "group": "albums",
+      "hidden": false,
+      "history": false,
+      "listView": "photoAlbum",
+      "multiple": true,
+      "onDelete": "null",
+      "options": {
+        "css": "no-label"
+      },
+      "orderNumber": 40,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "album",
+      "readOnly": false,
+      "required": false,
+      "selectListView": "userAlbum",
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "owner",
+      "label": "Owner",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "commands": [
+        "edit"
+      ],
+      "commonSearchable": false,
+      "defaultValue": "$user.meta.base.member",
+      "eagerLoading": true,
+      "eagerView": "title",
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "cascade",
+      "orderNumber": 50,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "member",
+      "readOnly": true,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "comments",
+      "label": "Comments",
+      "type": "backref",
+      "commands": [
+        "create",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "group": "comments",
+      "hidden": false,
+      "history": false,
+      "listView": "relatedComment",
+      "multiple": true,
+      "options": {
+        "css": "no-label",
+        "relation": {
+          "createOnReadOnly": true
+        }
+      },
+      "orderNumber": 60,
+      "sortable": false,
+      "sortableRelation": false,
+      "refAttr": "photo",
+      "refClass": "comment",
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    }
+  ],
+  "behaviors": [
+    {
+      "type": "file",
+      "orderNumber": 10,
+      "imageOnly": true,
+      "maxSize": 6000000,
+      "nameAttr": "name",
+      "accept": "image/jpeg"
+    }
+  ],
+  "groups": [
+    {
+      "name": "tabs",
+      "label": "Tabs",
+      "orderNumber": 1000,
+      "readOnly": false,
+      "required": false,
+      "type": "tabs"
+    },
+    {
+      "active": true,
+      "name": "albums",
+      "label": "Albums",
+      "orderNumber": 1010,
+      "parent": "tabs",
+      "readOnly": false,
+      "required": false
+    },
+    {
+      "name": "comments",
+      "label": "Comments",
+      "orderNumber": 1020,
+      "parent": "tabs",
+      "readOnly": false,
+      "required": false
+    }
+  ]
+}

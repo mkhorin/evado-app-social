@@ -1,0 +1,272 @@
+[
+  {
+    "_id": {
+      "$oid": "5f24b8214d618d12d44b3ba4"
+    },
+    "name": "avatar-blue.png",
+    "mime": "image/png",
+    "size": 8636,
+    "file": "2020-08/5f24b8214d618d12d44b3ba3",
+    "createdAt": {
+      "$date": "2020-08-01T00:32:33.831Z"
+    },
+    "creator": {
+      "$oid": "5f24b7b54d618d12d44b3b9e"
+    },
+    "owner": {
+      "$oid": "5f24b8254d618d12d44b3ba5"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f24b8c24d618d12d44b3baa"
+    },
+    "name": "photo-00.jpg",
+    "mime": "image/jpeg",
+    "size": 35794,
+    "file": "2020-08/5f24b8c24d618d12d44b3ba9",
+    "createdAt": {
+      "$date": "2020-08-01T00:35:14.892Z"
+    },
+    "creator": {
+      "$oid": "5f24b7b54d618d12d44b3b9e"
+    },
+    "owner": {
+      "$oid": "5f24b8dd4d618d12d44b3bab"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f24b8e24d618d12d44b3bad"
+    },
+    "name": "photo-01.jpg",
+    "mime": "image/jpeg",
+    "size": 34483,
+    "file": "2020-08/5f24b8e24d618d12d44b3bac",
+    "createdAt": {
+      "$date": "2020-08-01T00:35:46.417Z"
+    },
+    "creator": {
+      "$oid": "5f24b7b54d618d12d44b3b9e"
+    },
+    "owner": {
+      "$oid": "5f24b8f24d618d12d44b3bae"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f24b9054d618d12d44b3bb0"
+    },
+    "name": "photo-02.jpg",
+    "mime": "image/jpeg",
+    "size": 35121,
+    "file": "2020-08/5f24b9054d618d12d44b3baf",
+    "createdAt": {
+      "$date": "2020-08-01T00:36:21.477Z"
+    },
+    "creator": {
+      "$oid": "5f24b7b54d618d12d44b3b9e"
+    },
+    "owner": {
+      "$oid": "5f24b9144d618d12d44b3bb1"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f24bb8a4d618d12d44b3bb8"
+    },
+    "name": "avatar-green.png",
+    "mime": "image/png",
+    "size": 9083,
+    "file": "2020-08/5f24bb8a4d618d12d44b3bb7",
+    "createdAt": {
+      "$date": "2020-08-01T00:47:06.576Z"
+    },
+    "creator": {
+      "$oid": "5f24bb714d618d12d44b3bb2"
+    },
+    "owner": {
+      "$oid": "5f24bb8c4d618d12d44b3bb9"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f24bbdd4d618d12d44b3bbd"
+    },
+    "name": "photo-03.jpg",
+    "mime": "image/jpeg",
+    "size": 20463,
+    "file": "2020-08/5f24bbdd4d618d12d44b3bbc",
+    "createdAt": {
+      "$date": "2020-08-01T00:48:29.538Z"
+    },
+    "creator": {
+      "$oid": "5f24bb714d618d12d44b3bb2"
+    },
+    "owner": {
+      "$oid": "5f24bbef4d618d12d44b3bbe"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f24bc014d618d12d44b3bc0"
+    },
+    "name": "photo-04.jpg",
+    "mime": "image/jpeg",
+    "size": 20446,
+    "file": "2020-08/5f24bc014d618d12d44b3bbf",
+    "createdAt": {
+      "$date": "2020-08-01T00:49:05.935Z"
+    },
+    "creator": {
+      "$oid": "5f24bb714d618d12d44b3bb2"
+    },
+    "owner": {
+      "$oid": "5f24bc114d618d12d44b3bc1"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f24bc1f4d618d12d44b3bc3"
+    },
+    "name": "photo-05.jpg",
+    "mime": "image/jpeg",
+    "size": 20362,
+    "file": "2020-08/5f24bc1f4d618d12d44b3bc2",
+    "createdAt": {
+      "$date": "2020-08-01T00:49:35.085Z"
+    },
+    "creator": {
+      "$oid": "5f24bb714d618d12d44b3bb2"
+    },
+    "owner": {
+      "$oid": "5f24bc2e4d618d12d44b3bc4"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f24bcbb4d618d12d44b3bcb"
+    },
+    "name": "avatar-magent.png",
+    "mime": "image/png",
+    "size": 9059,
+    "file": "2020-08/5f24bcbb4d618d12d44b3bca",
+    "createdAt": {
+      "$date": "2020-08-01T00:52:11.013Z"
+    },
+    "creator": {
+      "$oid": "5f24bc814d618d12d44b3bc5"
+    },
+    "owner": {
+      "$oid": "5f24bcbc4d618d12d44b3bcc"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f24bd0b4d618d12d44b3bd0"
+    },
+    "name": "photo-06.jpg",
+    "mime": "image/jpeg",
+    "size": 20699,
+    "file": "2020-08/5f24bd0b4d618d12d44b3bcf",
+    "createdAt": {
+      "$date": "2020-08-01T00:53:31.653Z"
+    },
+    "creator": {
+      "$oid": "5f24bc814d618d12d44b3bc5"
+    },
+    "owner": {
+      "$oid": "5f24bd264d618d12d44b3bd1"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f24bd2c4d618d12d44b3bd3"
+    },
+    "name": "photo-07.jpg",
+    "mime": "image/jpeg",
+    "size": 20231,
+    "file": "2020-08/5f24bd2c4d618d12d44b3bd2",
+    "createdAt": {
+      "$date": "2020-08-01T00:54:04.609Z"
+    },
+    "creator": {
+      "$oid": "5f24bc814d618d12d44b3bc5"
+    },
+    "owner": {
+      "$oid": "5f24bd484d618d12d44b3bd4"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f24bd9e4d618d12d44b3bdb"
+    },
+    "name": "avatar-yellow.png",
+    "mime": "image/png",
+    "size": 9021,
+    "file": "2020-08/5f24bd9e4d618d12d44b3bda",
+    "createdAt": {
+      "$date": "2020-08-01T00:55:58.069Z"
+    },
+    "creator": {
+      "$oid": "5f24bd824d618d12d44b3bd5"
+    },
+    "owner": {
+      "$oid": "5f24bd9f4d618d12d44b3bdc"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f24be004d618d12d44b3be1"
+    },
+    "name": "photo-08.jpg",
+    "mime": "image/jpeg",
+    "size": 20847,
+    "file": "2020-08/5f24be004d618d12d44b3be0",
+    "createdAt": {
+      "$date": "2020-08-01T00:57:36.626Z"
+    },
+    "creator": {
+      "$oid": "5f24bd824d618d12d44b3bd5"
+    },
+    "owner": {
+      "$oid": "5f24be184d618d12d44b3be2"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f24be2b4d618d12d44b3be4"
+    },
+    "name": "photo-09.jpg",
+    "mime": "image/jpeg",
+    "size": 20685,
+    "file": "2020-08/5f24be2b4d618d12d44b3be3",
+    "createdAt": {
+      "$date": "2020-08-01T00:58:19.585Z"
+    },
+    "creator": {
+      "$oid": "5f24bd824d618d12d44b3bd5"
+    },
+    "owner": {
+      "$oid": "5f24be434d618d12d44b3be5"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f24be5d4d618d12d44b3be7"
+    },
+    "name": "photo-10.jpg",
+    "mime": "image/jpeg",
+    "size": 20096,
+    "file": "2020-08/5f24be5d4d618d12d44b3be6",
+    "createdAt": {
+      "$date": "2020-08-01T00:59:09.640Z"
+    },
+    "creator": {
+      "$oid": "5f24bd824d618d12d44b3bd5"
+    },
+    "owner": {
+      "$oid": "5f24be794d618d12d44b3be8"
+    }
+  }
+]

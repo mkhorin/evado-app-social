@@ -1,0 +1,21 @@
+{
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "_state",
+      "orderNumber": 10
+    },
+    {
+      "name": "recipient",
+      "orderNumber": 30
+    },
+    {
+      "name": "text",
+      "orderNumber": 40
+    },
+    {
+      "name": "_createdAt",
+      "orderNumber": 50
+    }
+  ]
+}

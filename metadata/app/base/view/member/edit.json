@@ -1,0 +1,47 @@
+{
+  "description": "Default edit",
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "user",
+      "orderNumber": 10,
+      "readOnly": true
+    },
+    {
+      "name": "name",
+      "orderNumber": 15
+    },
+    {
+      "name": "avatar",
+      "orderNumber": 20
+    },
+    {
+      "name": "friends",
+      "orderNumber": 30
+    },
+    {
+      "name": "ownComments",
+      "orderNumber": 40
+    },
+    {
+      "name": "outgoingInvitations",
+      "orderNumber": 40
+    },
+    {
+      "name": "incomingInvitations",
+      "orderNumber": 60
+    },
+    {
+      "name": "relatedComments",
+      "orderNumber": 80
+    },
+    {
+      "name": "albums",
+      "orderNumber": 90
+    },
+    {
+      "name": "photos",
+      "orderNumber": 100
+    }
+  ]
+}

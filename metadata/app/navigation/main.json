@@ -1,0 +1,29 @@
+{
+  "label": "Main",
+  "description": "Default  menu section",
+  "nodes": [
+    {
+      "name": "albums",
+      "label": "Albums",
+      "orderNumber": 10,
+      "class": "album"
+    },
+    {
+      "name": "members",
+      "label": "Members",
+      "orderNumber": 20,
+      "class": "member",
+      "view": "publicList",
+      "options": {
+        "separatorAfter": true
+      }
+    },
+    {
+      "name": "myMember",
+      "label": "My member",
+      "orderNumber": 30,
+      "class": "member",
+      "view": "userMember"
+    }
+  ]
+}

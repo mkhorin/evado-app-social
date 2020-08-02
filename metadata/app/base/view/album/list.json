@@ -1,0 +1,22 @@
+{
+  "description": "Default list",
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "name",
+      "orderNumber": 10
+    },
+    {
+      "name": "description",
+      "orderNumber": 20
+    },
+    {
+      "name": "owner",
+      "orderNumber": 30
+    },
+    {
+      "name": "access",
+      "orderNumber": 50
+    }
+  ]
+}

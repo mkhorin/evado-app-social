@@ -1,0 +1,64 @@
+{
+  "abstract": false,
+  "description": "User avatar image",
+  "label": "Avatar",
+  "attrs": [
+    {
+      "name": "file",
+      "label": "File",
+      "type": "file",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "options": {
+        "css": "thumbnail-md"
+      },
+      "orderNumber": 10,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "owner",
+      "label": "Owner",
+      "type": "backref",
+      "viewType": "relationSelect",
+      "commands": [
+        "add",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "cascade",
+      "orderNumber": 20,
+      "sortable": false,
+      "sortableRelation": false,
+      "refAttr": "avatar",
+      "refClass": "member",
+      "readOnly": true,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    }
+  ],
+  "behaviors": [
+    {
+      "type": "file",
+      "orderNumber": 10,
+      "imageOnly": true,
+      "maxSize": 20000
+    }
+  ]
+}

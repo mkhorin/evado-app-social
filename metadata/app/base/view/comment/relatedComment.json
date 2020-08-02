@@ -1,0 +1,19 @@
+{
+  "label": "Related comment",
+  "description": "Related entity comments",
+  "readOnly": true,
+  "attrs": [
+    {
+      "name": "author",
+      "orderNumber": 30
+    },
+    {
+      "name": "text",
+      "orderNumber": 40
+    },
+    {
+      "name": "_createdAt",
+      "orderNumber": 50
+    }
+  ]
+}

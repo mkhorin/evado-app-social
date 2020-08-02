@@ -1,0 +1,65 @@
+[
+  {
+    "_id": {
+      "$oid": "5f24cbf48b23080fe8800d30"
+    },
+    "_class": "invitation",
+    "_creator": {
+      "$oid": "5f24bd824d618d12d44b3bd5"
+    },
+    "sender": {
+      "$oid": "5f24bd824d618d12d44b3bd7"
+    },
+    "recipient": {
+      "$oid": "5f24bc814d618d12d44b3bc7"
+    },
+    "text": "Pellentesque lorem laoreet laoreet lacinia",
+    "_state": "accepted",
+    "_createdAt": {
+      "$date": "2020-08-01T01:57:08.586Z"
+    },
+    "_transiting": null
+  },
+  {
+    "_id": {
+      "$oid": "5f24cd388b23080fe8800d3e"
+    },
+    "_class": "invitation",
+    "_creator": {
+      "$oid": "5f24bc814d618d12d44b3bc5"
+    },
+    "sender": {
+      "$oid": "5f24bc814d618d12d44b3bc7"
+    },
+    "recipient": {
+      "$oid": "5f24b7b54d618d12d44b3ba0"
+    },
+    "text": "Risus ligula eget Sed condimentum",
+    "_state": "accepted",
+    "_createdAt": {
+      "$date": "2020-08-01T02:02:32.229Z"
+    },
+    "_transiting": null
+  },
+  {
+    "_id": {
+      "$oid": "5f24cd8e8b23080fe8800d43"
+    },
+    "_class": "invitation",
+    "_creator": {
+      "$oid": "5f24b7b54d618d12d44b3b9e"
+    },
+    "sender": {
+      "$oid": "5f24b7b54d618d12d44b3ba0"
+    },
+    "recipient": {
+      "$oid": "5f24bb714d618d12d44b3bb4"
+    },
+    "text": "Curabitur eget Sed lobortis hac",
+    "_state": "accepted",
+    "_createdAt": {
+      "$date": "2020-08-01T02:03:58.069Z"
+    },
+    "_transiting": null
+  }
+]

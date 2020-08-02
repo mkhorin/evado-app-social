@@ -1,0 +1,93 @@
+{
+  "abstract": false,
+  "description": "Friendly relationship between two members",
+  "label": "Friend",
+  "attrs": [
+    {
+      "name": "initiator",
+      "label": "Initiator",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "description": "Member who sent a friendship invitation",
+      "commands": [
+        "add",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "defaultValue": "$user.meta.base.member",
+      "eagerLoading": false,
+      "eagerView": "title",
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "cascade",
+      "orderNumber": 10,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "member",
+      "readOnly": true,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "invitee",
+      "label": "Invitee",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "description": "Member to whom a friendship invitation was sent",
+      "commands": [
+        "add",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "eagerView": "title",
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "cascade",
+      "orderNumber": 10,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "member",
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "rules": [
+        {
+          "type": "custom",
+          "orderNumber": 10,
+          "config": {
+            "Class": "component/meta/validator/FriendValidator"
+          }
+        }
+      ]
+    },
+    {
+      "name": "_createdAt",
+      "label": "Created at",
+      "type": "date",
+      "viewType": "localDatetime",
+      "commonSearchable": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 20,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": true,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    }
+  ]
+}

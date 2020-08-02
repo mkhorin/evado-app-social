@@ -1,0 +1,34 @@
+{
+  "description": "Default edit",
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "file",
+      "options": {
+        "css": "thumbnail-lg"
+      },
+      "orderNumber": 10,
+      "readOnly": true
+    },
+    {
+      "name": "name",
+      "orderNumber": 20
+    },
+    {
+      "name": "text",
+      "orderNumber": 30
+    },
+    {
+      "name": "albums",
+      "orderNumber": 40
+    },
+    {
+      "name": "owner",
+      "orderNumber": 50
+    },
+    {
+      "name": "comments",
+      "orderNumber": 60
+    }
+  ]
+}

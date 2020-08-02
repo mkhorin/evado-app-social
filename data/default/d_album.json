@@ -1,0 +1,249 @@
+[
+  {
+    "_id": {
+      "$oid": "5f24b8774d618d12d44b3ba6"
+    },
+    "_class": "album",
+    "_creator": {
+      "$oid": "5f24b7b54d618d12d44b3b9e"
+    },
+    "access": "friends",
+    "owner": {
+      "$oid": "5f24b7b54d618d12d44b3ba0"
+    },
+    "name": "Lorem ipsum dolor",
+    "description": "Lorem ipsum dolor sit amet consectetuer tempor wisi aliquam Curabitur Nam",
+    "_createdAt": {
+      "$date": "2020-08-01T00:33:59.153Z"
+    },
+    "_editor": {
+      "$oid": "5f24b7b54d618d12d44b3b9e"
+    },
+    "_updatedAt": {
+      "$date": "2020-08-01T00:36:49.097Z"
+    },
+    "members": []
+  },
+  {
+    "_id": {
+      "$oid": "5f24b8904d618d12d44b3ba7"
+    },
+    "_class": "album",
+    "_creator": {
+      "$oid": "5f24b7b54d618d12d44b3b9e"
+    },
+    "access": "none",
+    "owner": {
+      "$oid": "5f24b7b54d618d12d44b3ba0"
+    },
+    "name": "Tempor platea",
+    "description": "Tempor platea sed nec sit Nullam ac ipsum metus justo Donec",
+    "_createdAt": {
+      "$date": "2020-08-01T00:34:24.921Z"
+    },
+    "_editor": {
+      "$oid": "5f24b7b54d618d12d44b3b9e"
+    },
+    "_updatedAt": {
+      "$date": "2020-08-01T00:34:26.598Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f24b8b54d618d12d44b3ba8"
+    },
+    "_class": "album",
+    "_creator": {
+      "$oid": "5f24b7b54d618d12d44b3b9e"
+    },
+    "access": "all",
+    "owner": {
+      "$oid": "5f24b7b54d618d12d44b3ba0"
+    },
+    "name": "Quisque wisi",
+    "description": "Quisque wisi iaculis justo lorem ac tristique cursus porttitor tincidunt vitae",
+    "_createdAt": {
+      "$date": "2020-08-01T00:35:01.716Z"
+    },
+    "_editor": {
+      "$oid": "5f24b7b54d618d12d44b3b9e"
+    },
+    "_updatedAt": {
+      "$date": "2020-08-01T00:35:03.037Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f24bbb14d618d12d44b3bba"
+    },
+    "_class": "album",
+    "_creator": {
+      "$oid": "5f24bb714d618d12d44b3bb2"
+    },
+    "access": "all",
+    "owner": {
+      "$oid": "5f24bb714d618d12d44b3bb4"
+    },
+    "name": "Condimentum id Donec",
+    "description": "Condimentum id Donec Aenean nec dui Suspendisse tempus congue pede fringilla",
+    "_createdAt": {
+      "$date": "2020-08-01T00:47:45.736Z"
+    },
+    "_editor": {
+      "$oid": "5f24bb714d618d12d44b3bb2"
+    },
+    "_updatedAt": {
+      "$date": "2020-08-01T00:49:52.430Z"
+    },
+    "members": []
+  },
+  {
+    "_id": {
+      "$oid": "5f24bbce4d618d12d44b3bbb"
+    },
+    "_class": "album",
+    "_creator": {
+      "$oid": "5f24bb714d618d12d44b3bb2"
+    },
+    "access": "friends",
+    "owner": {
+      "$oid": "5f24bb714d618d12d44b3bb4"
+    },
+    "name": "Quis Nulla wisi",
+    "description": "Quis Nulla wisi est convallis mi Nam condimentum sed eros tellus",
+    "_createdAt": {
+      "$date": "2020-08-01T00:48:14.280Z"
+    },
+    "_editor": {
+      "$oid": "5f24bb714d618d12d44b3bb2"
+    },
+    "_updatedAt": {
+      "$date": "2020-08-01T00:49:24.437Z"
+    },
+    "members": []
+  },
+  {
+    "_id": {
+      "$oid": "5f24bcd84d618d12d44b3bcd"
+    },
+    "_class": "album",
+    "_creator": {
+      "$oid": "5f24bc814d618d12d44b3bc5"
+    },
+    "access": "all",
+    "owner": {
+      "$oid": "5f24bc814d618d12d44b3bc7"
+    },
+    "name": "Cum Sed nascetur",
+    "description": "Cum Sed nascetur urna penatibus malesuada sed tempus metus justo enim",
+    "_createdAt": {
+      "$date": "2020-08-01T00:52:40.202Z"
+    },
+    "_editor": {
+      "$oid": "5f24bc814d618d12d44b3bc5"
+    },
+    "_updatedAt": {
+      "$date": "2020-08-01T00:54:40.667Z"
+    },
+    "members": []
+  },
+  {
+    "_id": {
+      "$oid": "5f24bcfd4d618d12d44b3bce"
+    },
+    "_class": "album",
+    "_creator": {
+      "$oid": "5f24bc814d618d12d44b3bc5"
+    },
+    "access": "all",
+    "owner": {
+      "$oid": "5f24bc814d618d12d44b3bc7"
+    },
+    "name": "Egestas Curabitur augue",
+    "description": "Egestas Curabitur augue nisl Vestibulum Fusce pede est interdum ut tellus",
+    "_createdAt": {
+      "$date": "2020-08-01T00:53:17.928Z"
+    },
+    "_editor": {
+      "$oid": "5f24bc814d618d12d44b3bc5"
+    },
+    "_updatedAt": {
+      "$date": "2020-08-01T00:54:47.974Z"
+    },
+    "members": []
+  },
+  {
+    "_id": {
+      "$oid": "5f24bdc44d618d12d44b3bdd"
+    },
+    "_class": "album",
+    "_creator": {
+      "$oid": "5f24bd824d618d12d44b3bd5"
+    },
+    "access": "friends",
+    "owner": {
+      "$oid": "5f24bd824d618d12d44b3bd7"
+    },
+    "name": "Porta ullamcorper",
+    "description": "Porta ullamcorper et pretium Vestibulum molestie mauris rhoncus id tortor aliquet",
+    "_createdAt": {
+      "$date": "2020-08-01T00:56:36.348Z"
+    },
+    "_editor": {
+      "$oid": "5f24bd824d618d12d44b3bd5"
+    },
+    "_updatedAt": {
+      "$date": "2020-08-01T00:59:41.884Z"
+    },
+    "members": []
+  },
+  {
+    "_id": {
+      "$oid": "5f24bddd4d618d12d44b3bde"
+    },
+    "_class": "album",
+    "_creator": {
+      "$oid": "5f24bd824d618d12d44b3bd5"
+    },
+    "access": "all",
+    "owner": {
+      "$oid": "5f24bd824d618d12d44b3bd7"
+    },
+    "name": "Lacus tincidunt adipiscing",
+    "description": "Lacus tincidunt adipiscing lacinia quam pellentesque wisi habitasse sit Phasellus gravida",
+    "_createdAt": {
+      "$date": "2020-08-01T00:57:01.172Z"
+    },
+    "_editor": {
+      "$oid": "5f24bd824d618d12d44b3bd5"
+    },
+    "_updatedAt": {
+      "$date": "2020-08-01T00:58:58.159Z"
+    },
+    "members": []
+  },
+  {
+    "_id": {
+      "$oid": "5f24bdf44d618d12d44b3bdf"
+    },
+    "_class": "album",
+    "_creator": {
+      "$oid": "5f24bd824d618d12d44b3bd5"
+    },
+    "access": "none",
+    "owner": {
+      "$oid": "5f24bd824d618d12d44b3bd7"
+    },
+    "name": "Dui volutpat Vivamus",
+    "description": "Dui volutpat Vivamus orci feugiat venenatis Vestibulum metus laoreet Maecenas amet",
+    "_createdAt": {
+      "$date": "2020-08-01T00:57:24.321Z"
+    },
+    "_editor": {
+      "$oid": "5f24bd824d618d12d44b3bd5"
+    },
+    "_updatedAt": {
+      "$date": "2020-08-01T00:59:01.682Z"
+    }
+  }
+]

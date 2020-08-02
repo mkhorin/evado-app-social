@@ -1,0 +1,48 @@
+
+<div class="friend-list loadable-container" data-handler="MemberFriendList" data-member="{{_id}}">
+
+    <template data-id="avatar">
+        <img data-src="<%- _url('/api/base/file/thumbnail') %>?c=avatar&id=##avatar##"
+             class="thumbnail img-responsive" alt="##name##">
+    </template>
+
+    <template data-id="avatarPlaceholder">
+        <img src="front/image/avatar-placeholder.png" class="thumbnail img-responsive" alt="##name##">
+    </template>
+
+    <template data-id="list">
+        <div class="friend-items">##items##</div>
+    </template>
+
+    <template data-id="item">
+        <div class="friend-card" data-id="##_id##">
+            <a class="thumbnail-link" href="#" data-action="member">
+                ##avatar##
+            </a>
+            <h3><a href="#" data-action="member">##name##</a></h3>
+            <h4>
+                <span data-t="">Photos:</span>
+                <b>##photoCounter##</b>
+            </h4>
+        </div>
+    </template>
+
+    <%- include('./_pagination', {start: '##', end: '##'}) %>
+
+    <template data-id="empty">
+        <div class="alert-warning alert">
+            <span data-t="">No friends found</span>
+        </div>
+    </template>
+
+    <template data-id="warning">
+        <div class="alert-warning alert">##text##</div>
+    </template>
+
+    <template data-id="error">
+        <div class="alert-danger alert">##text##</div>
+    </template>
+
+    <div class="loadable-content"></div>
+    <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
+</div>

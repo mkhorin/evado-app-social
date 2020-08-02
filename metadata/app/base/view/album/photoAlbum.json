@@ -1,0 +1,18 @@
+{
+  "label": "Photo album",
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "name",
+      "orderNumber": 10
+    },
+    {
+      "name": "description",
+      "orderNumber": 20
+    },
+    {
+      "name": "access",
+      "orderNumber": 30
+    }
+  ]
+}

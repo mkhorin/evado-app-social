@@ -1,0 +1,28 @@
+{
+  "label": "Member album",
+  "readOnly": true,
+  "attrs": [
+    {
+      "name": "name",
+      "orderNumber": 10
+    },
+    {
+      "name": "description",
+      "orderNumber": 20
+    },
+    {
+      "name": "access",
+      "orderNumber": 30
+    },
+    {
+      "name": "owner",
+      "eagerLoading": false,
+      "hidden": true,
+      "orderNumber": 50
+    },
+    {
+      "name": "photoCounter",
+      "orderNumber": 80
+    }
+  ]
+}

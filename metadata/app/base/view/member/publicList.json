@@ -1,0 +1,20 @@
+{
+  "description": "Public list",
+  "editView": "publicView",
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "name",
+      "orderNumber": 10
+    },
+    {
+      "name": "avatar",
+      "orderNumber": 20,
+      "viewType": "thumbnail"
+    },
+    {
+      "name": "photoCounter",
+      "orderNumber": 30
+    }
+  ]
+}

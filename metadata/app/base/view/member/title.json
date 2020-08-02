@@ -1,0 +1,14 @@
+{
+  "editView": "publicView",
+  "readOnly": true,
+  "attrs": [
+    {
+      "name": "name",
+      "orderNumber": 10
+    },
+    {
+      "name": "avatar",
+      "orderNumber": 20
+    }
+  ]
+}
