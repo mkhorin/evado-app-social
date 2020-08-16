@@ -40,7 +40,7 @@ module.exports = class InvitationBehavior extends Base {
     }
 
     async notifySender (notice, data) {
-        const name = (await this.getRelated('invitee')).header.resolve();
+        const name = (await this.getRelated('recipient')).header.resolve();
         const recipient = (await this.getRelated('sender')).get('user');
         await this.sendNotification(notice, {name, recipient, ...data});
     }

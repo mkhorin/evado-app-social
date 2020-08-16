@@ -43,7 +43,7 @@ module.exports = class AlbumRule extends Base {
         return this.getBaseMeta().getClass('member').find().and({user: this.getUserId()}).id();
     }
 
-    async getObjectFilter () {
+    async getObjectFilter () { // filter objects in list
         const member = await this.getUserMemberId();
         const meta = this.getBaseMeta();
         const albumClass = meta.getClass('album');

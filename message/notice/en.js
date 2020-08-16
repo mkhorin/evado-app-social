@@ -9,7 +9,7 @@ module.exports = {
     'declined.text': '{name} refused to accept your invitation',
 
     'friended.subject': 'Friended',
-    'friended.text': 'You have a new friend - {name}',
+    'friended.text': '{name} is your new friend',
 
     'invited.subject': 'Invitation to be friends',
     'invited.text': '{name} invites you to be friends. <a class="modal-link" href="/office/model/update?c=invitation&id={id}" data-base="/office" target="_blank">Go to invitation</a>'

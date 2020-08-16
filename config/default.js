@@ -24,19 +24,11 @@ module.exports = {
         },
         'router': {
             // defaultModule: 'front'
-        },
-        'fileStorage': {
         }
     },
     metaModels: {
         'base': {
-            Class: require('evado-meta-base/base/BaseMeta'),
-            DataHistoryModel: {
-                Class: require('evado-module-office/model/DataHistory')
-            },
-            UserModel: {
-                Class: require('evado-module-office/model/User')
-            }
+            Class: require('evado-meta-base/base/BaseMeta')
         },
         'navigation': {
             Class: require('evado-meta-navigation/base/NavMeta')
@@ -79,25 +71,11 @@ module.exports = {
     notices: require('./default-notices'),
     tasks: require('./default-tasks'),
     utilities: require('./default-utilities'),
-    eventHandlers: {
-        'memberInstantiation': {
-            description: 'Create member object',
-            Class: 'evado/component/handler/MetaClassInstantiation',
-            className: 'member'
-        }
-    },
-    listeners: [{
-        description: 'Create member on user sign up',
-        events: ['auth.register'],
-        handlers: ['memberInstantiation']
-    }],
+    eventHandlers: require('./default-eventHandlers'),
+    listeners: require('./default-listeners'),
     params: {
         'enablePasswordReset': false,
         'enableSignUp': true,
         'enableSignUpVerification': false
-    },
-    widgets: {
-        'commonMenu': {
-        }
     }
 };

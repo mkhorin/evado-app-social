@@ -201,6 +201,7 @@
         "delete"
       ],
       "commonSearchable": false,
+      "createOnRead": true,
       "eagerLoading": false,
       "escape": true,
       "group": "comments",
@@ -209,10 +210,7 @@
       "listView": "relatedComment",
       "multiple": true,
       "options": {
-        "css": "no-label",
-        "relation": {
-          "createOnReadOnly": true
-        }
+        "css": "no-label"
       },
       "orderNumber": 70,
       "sortable": false,

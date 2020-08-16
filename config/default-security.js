@@ -44,7 +44,7 @@ module.exports = {
             type: 'class',
             class: 'album'
         },
-        rule: 'Album'
+        rule: 'album'
     }, {
         description: 'User can read allowed photos',
         roles: 'member',
@@ -54,7 +54,7 @@ module.exports = {
             type: 'class',
             class: 'photo'
         },
-        rule: 'Photo'
+        rule: 'photo'
     }, {
         description: 'User can manage his own objects',
         roles: 'member',
@@ -64,7 +64,7 @@ module.exports = {
             type: 'class',
             class: ['album', 'photo']
         },
-        rule: 'Owner user'
+        rule: 'owner'
     }, {
         description: 'User can change invitations he receives',
         roles: 'member',
@@ -74,7 +74,7 @@ module.exports = {
             type: 'class',
             class: 'invitation'
         },
-        rule: 'Recipient user'
+        rule: 'recipient'
     }, {
         description: 'User can change his own member',
         roles: 'member',
@@ -84,7 +84,7 @@ module.exports = {
             type: 'class',
             class: 'member'
         },
-        rule: 'User'
+        rule: 'user'
     }, {
         description: 'User can manage objects he created',
         roles: 'member',
@@ -94,7 +94,7 @@ module.exports = {
             type: 'class',
             class: ['avatar', 'comment', 'invitation']
         },
-        rule: 'Creator user'
+        rule: 'creator'
     }, {
         description: 'User can delete friendship',
         roles: 'member',
@@ -104,7 +104,7 @@ module.exports = {
             type: 'class',
             class: 'friend'
         },
-        rule: 'Friend deletion'
+        rule: 'friendDeletion'
     }],
 
     permissions: {
@@ -119,6 +119,9 @@ module.exports = {
         'moduleStudio': {
             label: 'Studio module'
         },
+        'moduleApiBaseUpload': {
+            label: 'Upload files'
+        },
         'utilityInviteFriend': {
             label: 'Invite friend utility',
             description: 'Invite to friends'
@@ -132,7 +135,8 @@ module.exports = {
             children: [
                 'moduleAdmin',
                 'moduleOffice',
-                'moduleStudio'
+                'moduleStudio',
+                'moduleApiBaseUpload'
             ]
         },
         'guest': {
@@ -144,43 +148,50 @@ module.exports = {
             description: 'Default role for registered users',
             children: [
                 'moduleOffice',
+                'moduleApiBaseUpload',
                 'utilityInviteFriend'
             ]
         }
     },
-    // bind users to roles
-    assignments: {
-        'Adam': 'administrator'
-    },
 
     rules: {
-        'Album': {
+        'album': {
+            label: 'Album',
             description: 'Check user access to read album',
             config: '{"Class": "component/meta/rbac/rule/AlbumRule"}'
         },
-        'Creator user': {
+        'creator': {
+            label: 'Creator',
             description: 'Check user binding as object creator',
             config: '{"Class": "evado/component/meta/rbac/rule/UserRule", "attr": "_creator"}'
         },
-        'Friend deletion': {
+        'friendDeletion': {
+            label: 'Friend deletion',
             description: 'Check that user belongs to the friend to be deleted',
             config: '{"Class": "component/meta/rbac/rule/FriendDeletionRule"}'
         },
-        'Owner user': {
+        'owner': {
+            label: 'Owner',
             description: 'Check user is owner',
             config: '{"Class": "evado/component/meta/rbac/rule/RefUserRule", "attr": "owner"}'
         },
-        'Photo': {
+        'photo': {
+            label: 'Photo',
             description: 'Check user access to read photo',
             config: '{"Class": "component/meta/rbac/rule/PhotoRule"}'
         },
-        'Recipient user': {
+        'recipient': {
+            label: 'Recipient',
             description: 'Check user is recipient',
             config: '{"Class": "evado/component/meta/rbac/rule/RefUserRule", "attr": "recipient"}'
         },
-        'User': {
+        'user': {
             description: 'Check user binding',
-            config: '{"Class": "evado/component/meta/rbac/rule/UserRule"}'
+            config: '{"Class": "evado/component/meta/rbac/rule/UserRule", "attr": "user"}'
         }
+    },
+
+    assignments: {
+        'Adam': 'administrator'
     }
 };
