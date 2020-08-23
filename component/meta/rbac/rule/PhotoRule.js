@@ -5,7 +5,7 @@
 
 const Base = require('evado/component/meta/rbac/rule/BaseRule');
 
-// member can read photo if can read photo album
+// member can read photo if can read album
 
 module.exports = class PhotoRule extends Base {
 

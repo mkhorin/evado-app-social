@@ -3,8 +3,9 @@
 // set NODE_ENV=development
 // node console/security --action createUsers
 // node console/security --action createUser --name Name --email Email --password Password
-// node console/security --action createSecurity
+// node console/security --action updateUser --email Email --attr attrName --value Value
 // node console/security --action changePassword --email Email --password Password
+// node console/security --action createSecurity
 // node console/security --action assignRole --email Email --role Role
 // node console/security --action export [--file default] [--space 2]
 // node console/security --action import [--file default] [--clear true]
@@ -22,11 +23,14 @@ const params = Console.parseProcessArguments();
         case 'createUser':
             await instance.createUser(params);
             break;
-        case 'createSecurity':
-            await instance.createSecurity(); // from configuration
+        case 'updateUser':
+            await instance.updateUser(params);
             break;
         case 'changePassword':
             await instance.changePassword(params);
+            break;
+        case 'createSecurity':
+            await instance.createSecurity(); // from configuration
             break;
         case 'assignRole':
             await instance.assignRole(params);

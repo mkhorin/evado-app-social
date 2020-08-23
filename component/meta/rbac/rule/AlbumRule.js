@@ -6,8 +6,8 @@
 const Base = require('evado/component/meta/rbac/rule/BaseRule');
 
 // member can read albums in All access
-// member can read albums in Friend access if he is album owner friend
-// member can read albums in Some access if he is in album member list
+// member can read albums in Friend access if he is a friend of the owner
+// member can read albums in Some access if he is in the member list
 
 module.exports = class AlbumRule extends Base {
 
