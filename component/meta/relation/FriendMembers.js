@@ -10,7 +10,7 @@ module.exports = class FriendMembers extends Base {
     async apply (query, model) {
         const friendClass = model.class.meta.getClass('friend');
         const member = model.getId();
-        const items = await friendClass.find().and(['OR', {initiator: member}, {invitee: member}]).raw().all();
+        const items = await friendClass.find(['OR', {initiator: member}, {invitee: member}]).raw().all();
         const members = [];
         for (const item of items) {
             members.push(item.initiator, item.invitee);

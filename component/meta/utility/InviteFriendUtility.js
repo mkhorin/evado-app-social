@@ -15,7 +15,7 @@ module.exports = class InviteFriendUtility extends Base {
         if (this.isUserId(model.get('user'))) {
             return false; // user member
         }
-        const userMember = await model.class.find().and({user: this.getUserId()}).id();
+        const userMember = await model.class.find({user: this.getUserId()}).id();
         if (await this.isFriends(model, userMember)) {
             return false; // already friends
         }
@@ -29,7 +29,7 @@ module.exports = class InviteFriendUtility extends Base {
             return true; // skip utility
         }
         const members = [member.getId(), userMember];
-        return friendClass.find().and({
+        return friendClass.find({
             initiator: members,
             invitee: members
         }).id();
@@ -42,8 +42,7 @@ module.exports = class InviteFriendUtility extends Base {
             return true; // skip utility
         }
         const members = [member.getId(), userMember];
-        return invitationClass.find().and({
-            _state: 'pending',
+        return invitationClass.findByState('pending').and({            
             sender: members,
             recipient: members
         }).id();
@@ -51,7 +50,7 @@ module.exports = class InviteFriendUtility extends Base {
 
     async execute () {
         const data = await this.resolveMetaParams();
-        const senderId = await data.model.class.find().and({user: this.getUserId()}).id();
+        const senderId = await data.model.class.find({user: this.getUserId()}).id();
         const invitation = await this.createModel(data.class.meta.getClass('invitation'));
         invitation.set('sender', senderId);
         invitation.set('recipient', data.model.getId());

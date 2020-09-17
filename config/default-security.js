@@ -162,36 +162,55 @@ module.exports = {
         'album': {
             label: 'Album',
             description: 'Check user access to read album',
-            config: '{"Class": "component/meta/rbac/rule/AlbumRule"}'
+            config: {
+                Class: 'component/meta/rbac/rule/AlbumRule'
+            }
         },
         'creator': {
             label: 'Creator',
             description: 'Check user binding as object creator',
-            config: '{"Class": "evado/component/meta/rbac/rule/UserRule", "attr": "_creator"}'
+            config: {
+                Class: 'evado/component/meta/rbac/rule/UserRule',
+                attr: '_creator'
+            }
         },
         'friendDeletion': {
             label: 'Friend deletion',
             description: 'Check that user belongs to the friend to be deleted',
-            config: '{"Class": "component/meta/rbac/rule/FriendDeletionRule"}'
+            config: {
+                Class: 'component/meta/rbac/rule/FriendDeletionRule'
+            }
         },
         'owner': {
             label: 'Owner',
             description: 'Check user is owner',
-            config: '{"Class": "evado/component/meta/rbac/rule/RefUserRule", "attr": "owner"}'
+            config: {
+                Class: 'evado/component/meta/rbac/rule/RefUserRule',
+                attr: 'owner'
+            }
         },
         'photo': {
             label: 'Photo',
             description: 'Check user access to read photo',
-            config: '{"Class": "component/meta/rbac/rule/PhotoRule"}'
+            config: {
+                Class: 'component/meta/rbac/rule/PhotoRule'
+            }
         },
         'recipient': {
             label: 'Recipient',
             description: 'Check user is recipient',
-            config: '{"Class": "evado/component/meta/rbac/rule/RefUserRule", "attr": "recipient"}'
+            config: {
+                Class: 'evado/component/meta/rbac/rule/RefUserRule',
+                attr: 'recipient'
+            }
         },
         'user': {
+            label: 'User',
             description: 'Check user binding',
-            config: '{"Class": "evado/component/meta/rbac/rule/UserRule", "attr": "user"}'
+            config: {
+                Class: 'evado/component/meta/rbac/rule/UserRule',
+                attr: 'user'
+            }
         }
     },
 

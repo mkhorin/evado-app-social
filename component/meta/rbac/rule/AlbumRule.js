@@ -28,7 +28,7 @@ module.exports = class AlbumRule extends Base {
     async checkFriendAccess (album) {
         const member = await this.getUserMemberId();
         const friends = [member, album.get('owner')];
-        return !!await album.class.meta.getClass('friend').find().and({
+        return !!await album.class.meta.getClass('friend').find({
             initiator: friends,
             invitee: friends
         }).id();
@@ -40,24 +40,24 @@ module.exports = class AlbumRule extends Base {
     }
 
     getUserMemberId () {
-        return this.getBaseMeta().getClass('member').find().and({user: this.getUserId()}).id();
+        return this.getBaseMeta().getClass('member').find({user: this.getUserId()}).id();
     }
 
     async getObjectFilter () { // filter objects in list
         const member = await this.getUserMemberId();
         const meta = this.getBaseMeta();
         const albumClass = meta.getClass('album');
-        const albums = await albumClass.find().and({
+        const albums = await albumClass.find({
             access: 'some',
             members: member
         }).ids();
         const friendClass = meta.getClass('friend');
         const friends = [
-            ...await friendClass.find().and({invitee: member}).column('initiator'),
-            ...await friendClass.find().and({initiator: member}).column('invitee')
+            ...await friendClass.find({invitee: member}).column('initiator'),
+            ...await friendClass.find({initiator: member}).column('invitee')
         ];
         if (friends.length) {
-            albums.push(...await albumClass.find().and({
+            albums.push(...await albumClass.find({
                 access: 'friends',
                 owner: friends
             }).ids());

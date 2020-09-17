@@ -6,18 +6,18 @@ module.exports = {
         active: true,
         subject: 'friended.subject',
         text: 'friended.text',
-        methods: ['popup']
+        methods: 'popup'
     },
     'declined': {
         active: true,
         subject: 'declined.subject',
         text: 'declined.text',
-        methods: ['popup']
+        methods: 'popup'
     },
     'invited': {
         active: true,
         subject: 'invited.subject',
         text: 'invited.text',
-        methods: ['popup']
+        methods: 'popup'
     }
 };

@@ -14,7 +14,7 @@ module.exports = class FriendValidator extends Base {
             return model.addError(name, 'Invitee cannot be the initiator');
         }
         const members = [initiator, invitee];
-        const id = await model.class.find().and({
+        const id = await model.class.find({
             initiator: members,
             invitee: members
         }).id();

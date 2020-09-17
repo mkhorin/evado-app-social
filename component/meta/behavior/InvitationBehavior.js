@@ -11,8 +11,7 @@ module.exports = class InvitationBehavior extends Base {
         const id = this.owner.getId();
         const name = (await this.getRelated('sender')).header.resolve();
         const recipient = (await this.getRelated('recipient')).get('user');
-        await this.sendNotification('invited', {id, name, recipient});
-        return super.afterInsert();
+        await this.module.createNotification('invited', recipient, {id, name});
     }
 
     async afterTransit (transition) {
@@ -24,7 +23,6 @@ module.exports = class InvitationBehavior extends Base {
                 await this.notifySender('declined');
                 break;
         }
-        return super.afterTransit(transition);
     }
 
     async createFriend () {
@@ -39,13 +37,9 @@ module.exports = class InvitationBehavior extends Base {
         }
     }
 
-    async notifySender (notice, data) {
+    async notifySender (notice) {
         const name = (await this.getRelated('recipient')).header.resolve();
         const recipient = (await this.getRelated('sender')).get('user');
-        await this.sendNotification(notice, {name, recipient, ...data});
-    }
-
-    sendNotification () {
-        return this.module.getNotifier().createNotification(...arguments);
+        await this.module.createNotification(notice, recipient, {name});
     }
 };
