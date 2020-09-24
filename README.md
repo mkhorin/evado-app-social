@@ -1,9 +1,7 @@
-# Evado Social Network App
+# Evado Social Network
 
-Social network app for sharing and discussing photos.
-
-- [Evado Declarative Framework](https://github.com/mkhorin/evado)
-- [Step-by-step tutorial](http://nervebit.com)
+Built on [Evado Declarative Framework](https://github.com/mkhorin/evado)
+this application helps members to share and discuss photos.
 
 ## Docker installation
 
@@ -65,4 +63,4 @@ Password: 123456
 ```
 
 ## Tutorial
-- [Build App Without Coding](http://nervebit.com)
+- [Build an App Without Coding](http://nervebit.com)
