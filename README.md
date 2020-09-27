@@ -1,7 +1,7 @@
 # Evado Social Network
 
-Built on [Evado Declarative Framework](https://github.com/mkhorin/evado)
-this application helps members to share and discuss photos.
+An application built on [Evado Declarative Framework](https://github.com/mkhorin/evado) 
+provides members to share and discuss photos.
 
 ## Docker installation
 
