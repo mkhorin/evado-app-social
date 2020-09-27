@@ -173,7 +173,7 @@ module.exports = {
             description: 'Check user binding as object creator',
             config: {
                 Class: 'evado/component/meta/rbac/rule/UserRule',
-                attr: '_creator'
+                userAttr: '_creator'
             }
         },
         'friendDeletion': {
@@ -188,7 +188,7 @@ module.exports = {
             description: 'Check user is owner',
             config: {
                 Class: 'evado/component/meta/rbac/rule/RefUserRule',
-                attr: 'owner'
+                refAttr: 'owner'
             }
         },
         'photo': {
@@ -203,15 +203,14 @@ module.exports = {
             description: 'Check user is recipient',
             config: {
                 Class: 'evado/component/meta/rbac/rule/RefUserRule',
-                attr: 'recipient'
+                refAttr: 'recipient'
             }
         },
         'user': {
             label: 'User',
             description: 'Check user binding',
             config: {
-                Class: 'evado/component/meta/rbac/rule/UserRule',
-                attr: 'user'
+                Class: 'evado/component/meta/rbac/rule/UserRule'
             }
         }
     },
