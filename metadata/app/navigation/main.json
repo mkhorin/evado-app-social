@@ -19,9 +19,16 @@
       }
     },
     {
+      "name": "myInvitations",
+      "label": "My invitations",
+      "orderNumber": 30,
+      "class": "invitation",
+      "view": "myList"
+    },
+    {
       "name": "myMember",
       "label": "My member",
-      "orderNumber": 30,
+      "orderNumber": 40,
       "class": "member",
       "view": "userMember"
     }

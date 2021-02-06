@@ -1,13 +1,9 @@
-:root {
-    --back-light: #f8f8f6;
-    --color-danger: #a94442;
-    --color-gray: #aaa;
-    --color-primary: #3c8dbc;
+body {
+    --back-light: #fafaf8;
+    --navbar-color: var(--light-warning);
+    --super-navbar-color: var(--dark-warning);
+    --sidebar-width: 0;
 }
-legend {
-    font-size: 15px;
-}
-
 .front-wrapper {
     background: none !important;
 }
@@ -54,13 +50,6 @@ legend {
 .commands {
     margin-bottom: 25px;
 }
-.signboard {
-    padding: 20px;
-    margin-top: 20px;
-    color: #884;
-    background: #ffe;
-    border-bottom: 2px solid #cca;
-}
 
 /* LOADABLE */
 
@@ -86,14 +75,12 @@ legend {
 
 .page {
     display: none;
-    padding: 20px 0 30px;
 }
 .page.active {
     display: block;
 }
 .page h1 {
-    font-size: 30px;
-    margin: 30px 0;
+    margin: 2rem 0;
 }
 .page > h3 {
     color: #888;
@@ -104,19 +91,14 @@ legend {
 .page .icon-title h1 {
     margin: 25px 0 10px;
 }
-.page .icon-title .thumbnail {
-    margin-right: 30px;
+.page .icon-title .img-thumbnail {
+    margin: 0 2rem 1rem 0;
 }
 
 /* BREADCRUMB */
 
 .breadcrumb {
-    padding-right: 145px;
-    border-left: 2px solid #3c8dbc;
-    border-radius: 0;
-}
-.breadcrumb + h1 {
-    margin-top: 30px;
+    background: #eff;
 }
 
 /* ACCOUNT */
@@ -132,11 +114,11 @@ legend {
 .user-toggle {
     cursor: pointer;
     color: #666;
-    line-height: 36px;
+    line-height: 3rem;
     border-left: 1px solid #ddd;
 }
 .user-toggle:hover {
-    color: var(--color-primary);
+    color: var(--primary);
 }
 .user-toggle .dropdown-toggle {
     padding: 0 12px;
@@ -203,12 +185,12 @@ legend {
     padding: 15px;
     background: #fff;
     overflow: auto;
-    border-bottom: 2px solid var(--color-primary);
+    border-bottom: 2px solid var(--primary);
     text-align: center;
     height: 235px;
     max-width: 320px;
 }
-.member-card .thumbnail {
+.member-card .img-thumbnail {
     margin: 0 auto;
     max-width: 70%;
     max-height: 120px;
@@ -219,7 +201,8 @@ legend {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 20px;
+    font-size: 1.2rem;
+    margin: 1rem 0;
 }
 .member-card {
     margin-top: 20px;
@@ -232,15 +215,26 @@ legend {
     display: none;
 }
 .member-badge {
-    font-size: 14px;
-    padding: 7px 10px;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    color: #fff;
+}
+.status-no {
+    display: flex;
+    align-items: center;
 }
 .status-no [data-action="invite"] {
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 1rem;
 }
 .status-friend .member-badge {
-    background-color: var(--color-dark-success);
+    background-color: var(--success);
+}
+.status-no .member-badge {
+    background-color: var(--secondary);
+}
+.status-pending .member-badge {
+    background-color: var(--info);
 }
 
 /* ALBUM */
@@ -287,7 +281,7 @@ legend {
     float: left;
     margin-right: 20px;
 }
-.friend-card .thumbnail {
+.friend-card .img-thumbnail {
     max-width: 96px;
     margin: 0;
 }
@@ -310,7 +304,7 @@ legend {
     border-bottom-width: 3px;
     background: #fafafa;
 }
-.photo-card .thumbnail {
+.photo-card .img-thumbnail {
     margin: 0 auto;
 }
 .photo-card h4 {

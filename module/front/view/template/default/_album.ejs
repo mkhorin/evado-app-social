@@ -6,9 +6,9 @@
         <template data-id="album">
             <div class="page-head">
                 <ol class="breadcrumb">
-                    <li><a href="#" data-action="main" data-t="">Main</a></li>
-                    <li><a href="#" data-action="member" data-id="{{owner}}" data-t="">Member</a></li>
-                    <li data-t="">Album</li>
+                    <li class="breadcrumb-item"><a href="#" data-action="main" data-t="">Main</a></li>
+                    <li class="breadcrumb-item"><a href="#" data-action="member" data-id="{{owner}}" data-t="">Member</a></li>
+                    <li class="breadcrumb-item" data-t="">Album</li>
                 </ol>
                 <%- include('./_account') %>
             </div>
@@ -17,15 +17,11 @@
 
             <h4>{{description}}</h4>
 
-            <div class="tabs form-tabs mt40" data-id="tabs">
-                <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-tab active" data-id="photos">
-                        <a href="#" data-t="">Photos</a>
-                    </li>
-                    <li class="nav-tab" data-id="comments">
-                        <a href="#" data-t="">Comments</a>
-                    </li>
-                </ul>
+            <div class="tabs form-tabs mt-4" data-id="tabs">
+                <div class="nav nav-tabs" role="tablist">
+                    <a class="nav-item nav-link active" href="#" role="tab" data-id="photos" data-t="">Photos</a>
+                    <a class="nav-item nav-link" href="#" role="tab" data-id="comments" data-t="">Comments</a>
+                </div>
                 <div class="tab-content">
                     <div class="form-base-group tab-pane active" data-id="photos">
                         <%- include('./_albumPhotos') %>

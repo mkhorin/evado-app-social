@@ -12,5 +12,5 @@ module.exports = {
     'friended.text': 'Ваш новый друг - {name}',
 
     'invited.subject': 'Приглашение дружить',
-    'invited.text': '{name} приглашает вас дружить. <a class="modal-link" href="/office/model/update?c=invitation&id={id}" data-base="/office" target="_blank">Перейти к уведомлению</a>'
+    'invited.text': '{name} приглашает вас дружить. <a class="frame-link" href="/office/model/update?c=invitation&id={id}" data-base="/office" target="_blank">Перейти к уведомлению</a>'
 };

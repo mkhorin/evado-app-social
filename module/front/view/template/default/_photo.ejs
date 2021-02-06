@@ -6,21 +6,21 @@
         <template data-id="photo">
             <div class="page-head">
                 <ol class="breadcrumb">
-                    <li><a href="#" data-action="main" data-t="">Main</a></li>
-                    <li><a href="#" data-action="member" data-id="{{owner}}" data-t="">Member</a></li>
-                    <li><a href="#" data-action="album" data-id="{{album}}" data-t="">Album</a></li>
-                    <li data-t="">Photo</li>
+                    <li class="breadcrumb-item"><a href="#" data-action="main" data-t="">Main</a></li>
+                    <li class="breadcrumb-item"><a href="#" data-action="member" data-id="{{owner}}" data-t="">Member</a></li>
+                    <li class="breadcrumb-item"><a href="#" data-action="album" data-id="{{album}}" data-t="">Album</a></li>
+                    <li class="breadcrumb-item" data-t="">Photo</li>
                 </ol>
                 <%- include('./_account') %>
             </div>
 
             <img data-src="<%- _url('/api/base/file/thumbnail') %>?c=photo&id={{_id}}"
-                 class="thumbnail thumbnail-center img-responsive" alt="{{name}}">
+                 class="mx-auto img-thumbnail img-fluid" alt="{{name}}">
 
             <h1>{{name}}</h1>
-            <h4>{{text}}</h4>
+            <h5>{{text}}</h5>
 
-             <div class="block mt40">
+             <div class="block mt-4">
                  <h3 class="block-title" data-t="">Photo comments</h3>
                  <%- include('./_photoComments') %>
             </div>

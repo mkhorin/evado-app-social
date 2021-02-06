@@ -9,6 +9,7 @@
       "label": "Name",
       "type": "string",
       "commonSearchable": true,
+      "createOnRead": false,
       "eagerLoading": false,
       "escape": true,
       "hidden": false,
@@ -36,6 +37,7 @@
       "label": "Description",
       "type": "text",
       "commonSearchable": false,
+      "createOnRead": false,
       "eagerLoading": false,
       "escape": true,
       "hidden": false,
@@ -56,6 +58,7 @@
       "type": "string",
       "viewType": "radioList",
       "commonSearchable": false,
+      "createOnRead": false,
       "defaultValue": "none",
       "eagerLoading": false,
       "escape": true,
@@ -108,6 +111,7 @@
         "edit"
       ],
       "commonSearchable": false,
+      "createOnRead": false,
       "eagerLoading": false,
       "escape": true,
       "group": "access",
@@ -141,6 +145,7 @@
         "edit"
       ],
       "commonSearchable": false,
+      "createOnRead": false,
       "defaultValue": "$user.meta.base.member",
       "eagerLoading": true,
       "eagerView": "title",
@@ -170,6 +175,7 @@
         "edit"
       ],
       "commonSearchable": false,
+      "createOnRead": false,
       "eagerLoading": false,
       "escape": true,
       "group": "photos",
@@ -228,6 +234,7 @@
       "label": "Photo counter",
       "type": "calc",
       "commonSearchable": false,
+      "createOnRead": false,
       "eagerLoading": false,
       "escape": true,
       "expression": [

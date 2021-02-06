@@ -11,7 +11,7 @@ module.exports = class InvitationBehavior extends Base {
         const id = this.owner.getId();
         const name = (await this.getRelated('sender')).header.resolve();
         const recipient = (await this.getRelated('recipient')).get('user');
-        await this.module.createNotification('invited', recipient, {id, name});
+        await this.module.notify('invited', recipient, {id, name});
     }
 
     async afterTransit (transition) {
@@ -26,7 +26,7 @@ module.exports = class InvitationBehavior extends Base {
     }
 
     async createFriend () {
-        const friendClass = this.getMetaClass('friend');
+        const friendClass = this.getMetadataClass('friend');
         const friend = this.owner.createByView(friendClass);
         friend.assign({
             initiator: this.get('sender'),
@@ -37,9 +37,9 @@ module.exports = class InvitationBehavior extends Base {
         }
     }
 
-    async notifySender (notice) {
+    async notifySender (notification) {
         const name = (await this.getRelated('recipient')).header.resolve();
         const recipient = (await this.getRelated('sender')).get('user');
-        await this.module.createNotification(notice, recipient, {name});
+        await this.module.notify(notification, recipient, {name});
     }
 };

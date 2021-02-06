@@ -1,6 +1,6 @@
 'use strict';
 
-Front.NewComment = class NewComment extends Front.LoadableContent {
+Front.NewComment = class NewComment extends Front.Loadable {
 
     init () {
         super.init();
@@ -82,7 +82,7 @@ Front.NewComment = class NewComment extends Front.LoadableContent {
     }
 };
 
-Front.CommentList = class CommentList extends Front.LoadableContent {
+Front.CommentList = class CommentList extends Front.Loadable {
 
     init () {
         super.init();
@@ -114,7 +114,7 @@ Front.CommentList = class CommentList extends Front.LoadableContent {
     }
 
     render (data) {
-        let items = data && data.items;
+        let items = data?.items;
         items = Array.isArray(items) ? items : [];
         items = items.map(this.renderItem, this).join('') || this.resolveTemplate('empty');
         return this.resolveTemplate('list', {items});
@@ -135,9 +135,9 @@ Front.CommentList = class CommentList extends Front.LoadableContent {
 
     onDone (data) {
         super.onDone(data);
-        this.pagination.setTotal(data && data.totalSize);
+        this.pagination.setTotal(data?.totalSize);
         this.$content.append(this.pagination.render());
-        this.translateContainer();
+        Jam.t(this.$container);
     }
 
     onCommentCreated () {

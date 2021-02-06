@@ -1,6 +1,6 @@
 'use strict';
 
-Front.Album = class Album extends Front.LoadableContent {
+Front.Album = class Album extends Front.Loadable {
 
     getUrl (action = 'read') {
         return super.getUrl(action);
@@ -24,7 +24,7 @@ Front.Album = class Album extends Front.LoadableContent {
     }
 };
 
-Front.AlbumList = class AlbumList extends Front.LoadableContent {
+Front.AlbumList = class AlbumList extends Front.Loadable {
 
     init () {
         super.init();
@@ -55,7 +55,7 @@ Front.AlbumList = class AlbumList extends Front.LoadableContent {
     }
 
     render (data) {
-        let items = data && data.items;
+        let items = data?.items;
         items = Array.isArray(items) ? items : [];
         items = items.map(this.renderItem, this).join('');
         return this.resolveTemplate(items ? 'list' : 'empty', {items});
@@ -73,9 +73,9 @@ Front.AlbumList = class AlbumList extends Front.LoadableContent {
 
     onDone (data) {
         super.onDone(data);
-        this.pagination.setTotal(data && data.totalSize);
+        this.pagination.setTotal(data?.totalSize);
         this.$content.append(this.pagination.render());
-        this.translateContainer();
+        Jam.t(this.$container);
     }
 };
 

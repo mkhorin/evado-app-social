@@ -1,0 +1,34 @@
+{
+  "filter": [
+    "OR",
+    {
+      "sender": "$user.meta.base.member"
+    },
+    {
+      "recipient": "$user.meta.base.member"
+    }
+  ],
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "_state",
+      "orderNumber": 10
+    },
+    {
+      "name": "sender",
+      "orderNumber": 20
+    },
+    {
+      "name": "recipient",
+      "orderNumber": 30
+    },
+    {
+      "name": "text",
+      "orderNumber": 40
+    },
+    {
+      "name": "_createdAt",
+      "orderNumber": 50
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 'use strict';
 
-Front.Photo = class Photo extends Front.LoadableContent {
+Front.Photo = class Photo extends Front.Loadable {
 
     getUrl (action = 'read') {
         return super.getUrl(action);
@@ -25,7 +25,7 @@ Front.Photo = class Photo extends Front.LoadableContent {
     }
 };
 
-Front.PhotoList = class PhotoList extends Front.LoadableContent {
+Front.PhotoList = class PhotoList extends Front.Loadable {
 
     init () {
         super.init();
@@ -56,7 +56,7 @@ Front.PhotoList = class PhotoList extends Front.LoadableContent {
     }
 
     render (data) {
-        let items = data && data.items;
+        let items = data?.items;
         items = Array.isArray(items) ? items : [];
         items = items.map(this.renderItem, this).join('');
         return this.resolveTemplate(items ? 'list' : 'empty', {items});
@@ -73,9 +73,9 @@ Front.PhotoList = class PhotoList extends Front.LoadableContent {
 
     onDone (data) {
         super.onDone(data);
-        this.pagination.setTotal(data && data.totalSize);
+        this.pagination.setTotal(data?.totalSize);
         this.$content.append(this.pagination.render());
-        this.translateContainer();
+        Jam.t(this.$container);
     }
 
     onDetail (event) {

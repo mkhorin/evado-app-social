@@ -5,21 +5,21 @@
 
         <template data-id="avatar">
             <img data-src="<%- _url('/api/base/file/download') %>?c=avatar&id={{avatar}}"
-                 class="thumbnail thumbnail-sm thumbnail-center img-responsive transparent"
+                 class="mx-auto thumbnail-transparent thumbnail-sm img-thumbnail img-fluid"
                  alt="{{name}}">
         </template>
 
         <template data-id="avatarPlaceholder">
             <img src="front/image/avatar-placeholder.png"
-                 class="thumbnail thumbnail-sm thumbnail-center img-responsive transparent"
+                 class="mx-auto thumbnail-transparent thumbnail-sm img-thumbnail img-fluid"
                  alt="{{name}}">
         </template>
 
         <template data-id="member">
             <div class="page-head">
                 <ol class="breadcrumb">
-                    <li><a href="#" data-action="main" data-t="">Main</a></li>
-                    <li data-t="">Member</li>
+                    <li class="breadcrumb-item"><a href="#" data-action="main" data-t="">Main</a></li>
+                    <li class="breadcrumb-item" data-t="">Member</li>
                 </ol>
                 <%- include('./_account') %>
             </div>
@@ -27,16 +27,15 @@
             <h1>{{name}}</h1>
 
             <div class="row">
-                <div class="col-md-2 col-sm-3 col-xs-4">
+                <div class="col-lg-2 col-md-3 col-4">
                     {{avatar}}
                 </div>
-                <div class="col-md-10 col-sm-9 col-xs-8">
-                    <h2>{{name}}</h2>
-                    <h4>
+                <div class="col-lg-10 col-md-9 col-8">
+                    <h4 class="mb-4">
                         <span data-t="">Total photos:</span>
                         <b>{{photoCounter}}</b>
                     </h4>
-                    <div class="status-{{friendStatus}} mt15">
+                    <div class="status-{{friendStatus}}">
                         <span class="member-badge badge" data-t="meta.class.member">{{friendStatus_title}}</span>
                         <button type="button" class="btn-success btn" data-action="invite" data-id="{{_id}}">
                             <span data-t="">Invite</span>
@@ -45,15 +44,11 @@
                 </div>
             </div>
 
-            <div class="tabs form-tabs mt40" data-id="tabs">
-                <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-tab active" data-id="albums">
-                        <a href="#" data-t="">Albums</a>
-                    </li>
-                    <li class="nav-tab" data-id="friends">
-                        <a href="#" data-t="">Friends</a>
-                    </li>
-                </ul>
+            <div class="tabs form-tabs mt-4" data-id="tabs">
+                <div class="nav nav-tabs" role="tablist">
+                    <a class="nav-item nav-link active" href="#" role="tab" data-id="albums" data-t="">Albums</a>
+                    <a class="nav-item nav-link" href="#" role="tab" data-id="friends" data-t="">Friends</a>
+                </div>
                 <div class="tab-content">
                     <div class="form-base-group tab-pane active" data-id="albums">
                         <%- include('./_memberAlbums') %>

@@ -15,31 +15,31 @@ Jam.Utility.InviteFriend = class InviteFriendUtility extends Jam.Utility {
         this.$form = Jam.dialog.$container.find('.form');
         this.$alert = this.$form.find('.alert');
         this.$text = this.$form.find('[name="text"]').focus();
-        Jam.i18n.translateContainer(this.$form);
+        Jam.t(this.$form);
     }
 
     onBeforeSubmit () {
         if (!this.validate()) {
             return false;
         }
-        Jam.toggleGlobalLoader(true);
+        Jam.toggleLoader(true);
         const data = this.getRequestData({
             model: this.getModel().id,
             text: this.$text.val()
         });
-        Jam.Helper.post(this.getUrl(), data)
+        return Jam.post(this.getUrl(), data)
             .done(this.onDone.bind(this))
             .fail(this.onFail.bind(this));
     }
 
     onDone (data) {
         Jam.dialog.close();
-        Jam.toggleGlobalLoader(false);
-        this.modal.reload({saved: true}).done(() => this.getModel().notice.success(data));
+        Jam.toggleLoader(false);
+        this.frame.reload({saved: true}).done(() => this.getModel().alert.success(data));
     }
 
     onFail (data) {
-        Jam.toggleGlobalLoader(false);
+        Jam.toggleLoader(false);
         this.$alert.removeClass('hidden').html(data.responseJSON || data.responseText);
     }
 
