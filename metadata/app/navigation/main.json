@@ -13,22 +13,24 @@
       "label": "Members",
       "orderNumber": 20,
       "class": "member",
-      "view": "publicList",
-      "options": {
-        "separatorAfter": true
-      }
+      "view": "publicList"
+    },
+    {
+      "name": "divider1",
+      "orderNumber": 30,
+      "type": "divider"
     },
     {
       "name": "myInvitations",
       "label": "My invitations",
-      "orderNumber": 30,
+      "orderNumber": 40,
       "class": "invitation",
       "view": "myList"
     },
     {
       "name": "myMember",
       "label": "My member",
-      "orderNumber": 40,
+      "orderNumber": 50,
       "class": "member",
       "view": "userMember"
     }
