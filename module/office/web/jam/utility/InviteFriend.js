@@ -8,8 +8,8 @@ Jam.Utility.InviteFriend = class InviteFriendUtility extends Jam.Utility {
     onItem (event) {
         const content = $('[data-id="inviteFriendForm"]').html();
         Jam.dialog.show(content, {
+            css: 'success',
             title: 'Invite to friends',
-            cssClass: 'success',
             beforeSubmit: this.onBeforeSubmit.bind(this)
         });
         this.$form = Jam.dialog.$container.find('.form');
