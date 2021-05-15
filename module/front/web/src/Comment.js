@@ -48,7 +48,7 @@ Front.NewComment = class NewComment extends Front.Loadable {
         this.initData = data;
         this.$content.html('');
         this.$modalError.addClass('hidden');
-        this.$modal.modal();
+        this.modal = Jam.showModal(this.$modal);
         this.load();
     }
 
@@ -74,7 +74,7 @@ Front.NewComment = class NewComment extends Front.Loadable {
     }
 
     onCreateDone (data) {
-        this.$modal.modal('hide');
+        this.modal.hide();
         this.front.trigger('comment:created');
     }
 

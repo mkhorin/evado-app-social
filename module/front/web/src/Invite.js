@@ -13,7 +13,7 @@ Front.Invite = class Invite extends Front.Element {
     onInvite (event, data) {
         this.member = data.member;
         this.$modalError.addClass('hidden');
-        this.$modal.modal();
+        this.modal = Jam.showModal(this.$modal);
     }
 
     onSend () {
@@ -33,7 +33,7 @@ Front.Invite = class Invite extends Front.Element {
     }
 
     onDone (data) {
-        this.$modal.modal('hide');
+        this.modal.hide();
         this.front.getHandler('Member').load();
     }
 
