@@ -4,7 +4,7 @@
       "$oid": "5f24b8214d618d12d44b3ba4"
     },
     "name": "avatar-blue.png",
-    "mime": "image/png",
+    "type": "image/png",
     "size": 8636,
     "file": "2020-08/5f24b8214d618d12d44b3ba3",
     "createdAt": {
@@ -22,7 +22,7 @@
       "$oid": "5f24b8c24d618d12d44b3baa"
     },
     "name": "photo-00.jpg",
-    "mime": "image/jpeg",
+    "type": "image/jpeg",
     "size": 35794,
     "file": "2020-08/5f24b8c24d618d12d44b3ba9",
     "createdAt": {
@@ -40,7 +40,7 @@
       "$oid": "5f24b8e24d618d12d44b3bad"
     },
     "name": "photo-01.jpg",
-    "mime": "image/jpeg",
+    "type": "image/jpeg",
     "size": 34483,
     "file": "2020-08/5f24b8e24d618d12d44b3bac",
     "createdAt": {
@@ -58,7 +58,7 @@
       "$oid": "5f24b9054d618d12d44b3bb0"
     },
     "name": "photo-02.jpg",
-    "mime": "image/jpeg",
+    "type": "image/jpeg",
     "size": 35121,
     "file": "2020-08/5f24b9054d618d12d44b3baf",
     "createdAt": {
@@ -76,7 +76,7 @@
       "$oid": "5f24bb8a4d618d12d44b3bb8"
     },
     "name": "avatar-green.png",
-    "mime": "image/png",
+    "type": "image/png",
     "size": 9083,
     "file": "2020-08/5f24bb8a4d618d12d44b3bb7",
     "createdAt": {
@@ -94,7 +94,7 @@
       "$oid": "5f24bbdd4d618d12d44b3bbd"
     },
     "name": "photo-03.jpg",
-    "mime": "image/jpeg",
+    "type": "image/jpeg",
     "size": 20463,
     "file": "2020-08/5f24bbdd4d618d12d44b3bbc",
     "createdAt": {
@@ -112,7 +112,7 @@
       "$oid": "5f24bc014d618d12d44b3bc0"
     },
     "name": "photo-04.jpg",
-    "mime": "image/jpeg",
+    "type": "image/jpeg",
     "size": 20446,
     "file": "2020-08/5f24bc014d618d12d44b3bbf",
     "createdAt": {
@@ -130,7 +130,7 @@
       "$oid": "5f24bc1f4d618d12d44b3bc3"
     },
     "name": "photo-05.jpg",
-    "mime": "image/jpeg",
+    "type": "image/jpeg",
     "size": 20362,
     "file": "2020-08/5f24bc1f4d618d12d44b3bc2",
     "createdAt": {
@@ -148,7 +148,7 @@
       "$oid": "5f24bcbb4d618d12d44b3bcb"
     },
     "name": "avatar-magent.png",
-    "mime": "image/png",
+    "type": "image/png",
     "size": 9059,
     "file": "2020-08/5f24bcbb4d618d12d44b3bca",
     "createdAt": {
@@ -166,7 +166,7 @@
       "$oid": "5f24bd0b4d618d12d44b3bd0"
     },
     "name": "photo-06.jpg",
-    "mime": "image/jpeg",
+    "type": "image/jpeg",
     "size": 20699,
     "file": "2020-08/5f24bd0b4d618d12d44b3bcf",
     "createdAt": {
@@ -184,7 +184,7 @@
       "$oid": "5f24bd2c4d618d12d44b3bd3"
     },
     "name": "photo-07.jpg",
-    "mime": "image/jpeg",
+    "type": "image/jpeg",
     "size": 20231,
     "file": "2020-08/5f24bd2c4d618d12d44b3bd2",
     "createdAt": {
@@ -202,7 +202,7 @@
       "$oid": "5f24bd9e4d618d12d44b3bdb"
     },
     "name": "avatar-yellow.png",
-    "mime": "image/png",
+    "type": "image/png",
     "size": 9021,
     "file": "2020-08/5f24bd9e4d618d12d44b3bda",
     "createdAt": {
@@ -220,7 +220,7 @@
       "$oid": "5f24be004d618d12d44b3be1"
     },
     "name": "photo-08.jpg",
-    "mime": "image/jpeg",
+    "type": "image/jpeg",
     "size": 20847,
     "file": "2020-08/5f24be004d618d12d44b3be0",
     "createdAt": {
@@ -238,7 +238,7 @@
       "$oid": "5f24be2b4d618d12d44b3be4"
     },
     "name": "photo-09.jpg",
-    "mime": "image/jpeg",
+    "type": "image/jpeg",
     "size": 20685,
     "file": "2020-08/5f24be2b4d618d12d44b3be3",
     "createdAt": {
@@ -256,7 +256,7 @@
       "$oid": "5f24be5d4d618d12d44b3be7"
     },
     "name": "photo-10.jpg",
-    "mime": "image/jpeg",
+    "type": "image/jpeg",
     "size": 20096,
     "file": "2020-08/5f24be5d4d618d12d44b3be6",
     "createdAt": {

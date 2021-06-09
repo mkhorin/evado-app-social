@@ -9,7 +9,7 @@
     },
     "file": "2020-08/5f24b8214d618d12d44b3ba3",
     "_size": 8636,
-    "_mime": "image/png",
+    "_type": "image/png",
     "_createdAt": {
       "$date": "2020-08-01T00:32:37.458Z"
     }
@@ -24,7 +24,7 @@
     },
     "file": "2020-08/5f24bb8a4d618d12d44b3bb7",
     "_size": 9083,
-    "_mime": "image/png",
+    "_type": "image/png",
     "_createdAt": {
       "$date": "2020-08-01T00:47:08.234Z"
     }
@@ -39,7 +39,7 @@
     },
     "file": "2020-08/5f24bcbb4d618d12d44b3bca",
     "_size": 9059,
-    "_mime": "image/png",
+    "_type": "image/png",
     "_createdAt": {
       "$date": "2020-08-01T00:52:12.234Z"
     }
@@ -54,7 +54,7 @@
     },
     "file": "2020-08/5f24bd9e4d618d12d44b3bda",
     "_size": 9021,
-    "_mime": "image/png",
+    "_type": "image/png",
     "_createdAt": {
       "$date": "2020-08-01T00:55:59.509Z"
     }

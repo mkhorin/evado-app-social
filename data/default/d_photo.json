@@ -14,7 +14,7 @@
     "name": "Odio Phasellus Sed mauris",
     "text": "Vivamus et pretium nunc Aenean elit laoreet condimentum nibh leo Cum",
     "_size": 35794,
-    "_mime": "image/jpeg",
+    "_type": "image/jpeg",
     "_createdAt": {
       "$date": "2020-08-01T00:35:41.075Z"
     },
@@ -45,7 +45,7 @@
     "name": "Eget tincidunt consectetuer",
     "text": "Eget tincidunt consectetuer cursus semper et eu laoreet malesuada eros penatibus",
     "_size": 34483,
-    "_mime": "image/jpeg",
+    "_type": "image/jpeg",
     "_createdAt": {
       "$date": "2020-08-01T00:36:02.300Z"
     },
@@ -81,7 +81,7 @@
     "name": "Sapien id Proin",
     "text": "Sapien id Proin Vestibulum In enim auctor tempor et et justo",
     "_size": 35121,
-    "_mime": "image/jpeg",
+    "_type": "image/jpeg",
     "_createdAt": {
       "$date": "2020-08-01T00:36:36.108Z"
     },
@@ -112,7 +112,7 @@
     "name": "Senectus nibh eleifend",
     "text": "Senectus nibh eleifend ac ligula metus tellus odio Aliquam dui interdum",
     "_size": 20463,
-    "_mime": "image/jpeg",
+    "_type": "image/jpeg",
     "_createdAt": {
       "$date": "2020-08-01T00:48:47.124Z"
     },
@@ -143,7 +143,7 @@
     "name": "Nulla Morbi",
     "text": "Nulla Morbi libero massa Nullam metus",
     "_size": 20446,
-    "_mime": "image/jpeg",
+    "_type": "image/jpeg",
     "_createdAt": {
       "$date": "2020-08-01T00:49:21.037Z"
     },
@@ -174,7 +174,7 @@
     "name": "Est commodo volutpat",
     "text": "Est commodo volutpat eu pellentesque malesuada quis ante Quisque augue eget",
     "_size": 20362,
-    "_mime": "image/jpeg",
+    "_type": "image/jpeg",
     "_createdAt": {
       "$date": "2020-08-01T00:49:50.709Z"
     },
@@ -205,7 +205,7 @@
     "name": "Nam sed faucibus Maecenas",
     "text": "Maecenas leo metus Phasellus a In eget",
     "_size": 20699,
-    "_mime": "image/jpeg",
+    "_type": "image/jpeg",
     "_createdAt": {
       "$date": "2020-08-01T00:53:58.726Z"
     },
@@ -239,7 +239,7 @@
     "name": "Donec convallis",
     "text": "Donec convallis id sodales congue tempor quis sagittis eu porttitor",
     "_size": 20231,
-    "_mime": "image/jpeg",
+    "_type": "image/jpeg",
     "_createdAt": {
       "$date": "2020-08-01T00:54:32.485Z"
     },
@@ -270,7 +270,7 @@
     "name": "Justo orci et nulla",
     "text": "Justo orci et nulla elit Pellentesque vitae porta lorem Phasellus vitae",
     "_size": 20847,
-    "_mime": "image/jpeg",
+    "_type": "image/jpeg",
     "_createdAt": {
       "$date": "2020-08-01T00:58:00.304Z"
     },
@@ -304,7 +304,7 @@
     "name": "Non velit semper",
     "text": "Non velit semper lobortis cursus nibh malesuada tellus gravida augue Quisque",
     "_size": 20685,
-    "_mime": "image/jpeg",
+    "_type": "image/jpeg",
     "_createdAt": {
       "$date": "2020-08-01T00:58:43.112Z"
     },
@@ -335,7 +335,7 @@
     "name": "Sed condimentum Curabitur",
     "text": "Sed condimentum Curabitur velit convallis wisi convallis felis hendrerit Curabitur tellus",
     "_size": 20096,
-    "_mime": "image/jpeg",
+    "_type": "image/jpeg",
     "_createdAt": {
       "$date": "2020-08-01T00:59:37.313Z"
     },

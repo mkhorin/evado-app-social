@@ -62,6 +62,7 @@ Jam.I18n.meta = {
     'Main': 'Главная',
     'Member': 'Участник',
     'Members': 'Участники',
+    'My invitations': 'Мои приглашения',
     'My member': 'Мой участник',
 
     'Name': 'Название',
