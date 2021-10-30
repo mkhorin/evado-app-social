@@ -46,7 +46,7 @@ module.exports = {
             type: 'class',
             class: 'album'
         },
-        rule: 'album'
+        rules: 'album'
     }, {
         description: 'User can read allowed photos',
         roles: 'member',
@@ -56,7 +56,7 @@ module.exports = {
             type: 'class',
             class: 'photo'
         },
-        rule: 'photo'
+        rules: 'photo'
     }, {
         description: 'User can manage his own objects',
         roles: 'member',
@@ -66,17 +66,17 @@ module.exports = {
             type: 'class',
             class: ['album', 'photo']
         },
-        rule: 'owner'
+        rules: 'owner'
     }, {
         description: 'User can change invitations he receives',
         roles: 'member',
         type: 'allow',
         actions: ['read', 'update'],
         targets: {
-            type: 'class',
+            type: ['class', 'transition'],
             class: 'invitation'
         },
-        rule: 'recipient'
+        rules: 'recipient'
     }, {
         description: 'User can change his own member',
         roles: 'member',
@@ -86,17 +86,20 @@ module.exports = {
             type: 'class',
             class: 'member'
         },
-        rule: 'user'
+        rules: 'user'
     }, {
         description: 'User can manage objects he created',
         roles: 'member',
         type: 'allow',
         actions: 'all',
-        targets: {
+        targets: [{
             type: 'class',
             class: ['avatar', 'comment', 'invitation']
-        },
-        rule: 'creator'
+        }, {
+            type: 'transition',
+            class: 'invitation'
+        }],
+        rules: 'creator'
     }, {
         description: 'User can delete friendship',
         roles: 'member',
@@ -106,7 +109,7 @@ module.exports = {
             type: 'class',
             class: 'friend'
         },
-        rule: 'friendDeletion'
+        rules: 'friendDeletion'
     }],
 
     permissions: {
