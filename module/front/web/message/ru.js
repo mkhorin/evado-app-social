@@ -21,7 +21,7 @@ Object.assign(Jam.I18n.defaults, {
     'New': 'Новый',
     'New comment': 'Новый комментарий',
     'No albums available': 'Нет доступных альбомов',
-    'No comments': 'Нет комментариев',
+    'No comments found': 'Нет комментариев',
     'No friends found': 'Друзей не найдено',
 
     'Social Network App Demo': 'Демонстрация приложения социальной сети',

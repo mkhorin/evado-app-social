@@ -1,70 +1,60 @@
+<template id="member">
+    <div class="page">
 
-<div class="page" data-page="member" data-handler="MemberPage">
+        <breadcrumbs>
+            <template #path>
+                <li class="breadcrumb-item">
+                    <a @click.prevent="toMain" href="#" data-t="">Main</a>
+                </li>
+                <li class="breadcrumb-item" data-t="">Member</li>
+            </template>
+        </breadcrumbs>
 
-    <div class="member loadable-container" data-handler="Member">
+        <div class="loadable-container">
+            <template v-if="!loading && id">
 
-        <template data-id="avatar">
-            <img data-src="<%- _url('/api/base/file/download') %>?c=avatar&id={{avatar}}"
-                 class="mx-auto thumbnail-transparent thumbnail-sm img-thumbnail img-fluid"
-                 alt="{{name}}">
-        </template>
+                <h1>{{name}}</h1>
 
-        <template data-id="avatarPlaceholder">
-            <img src="front/image/avatar-placeholder.png"
-                 class="mx-auto thumbnail-transparent thumbnail-sm img-thumbnail img-fluid"
-                 alt="{{name}}">
-        </template>
-
-        <template data-id="member">
-            <div class="page-head">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#" data-action="main" data-t="">Main</a></li>
-                    <li class="breadcrumb-item" data-t="">Member</li>
-                </ol>
-                <%- include('./_account') %>
-            </div>
-
-            <h1>{{name}}</h1>
-
-            <div class="row">
-                <div class="col-lg-2 col-md-3 col-4">
-                    {{avatar}}
-                </div>
-                <div class="col-lg-10 col-md-9 col-8">
-                    <h4 class="mb-4">
-                        <span data-t="">Total photos:</span>
-                        <b>{{photoCounter}}</b>
-                    </h4>
-                    <div class="status-{{friendStatus}}">
-                        <span class="member-badge badge" data-t="meta.class.member">{{friendStatus_title}}</span>
-                        <button type="button" class="btn-success btn" data-action="invite" data-id="{{_id}}">
-                            <span data-t="">Invite</span>
-                        </button>
+                <div class="row">
+                    <div class="col-lg-2 col-md-3 col-4">
+                        <img :src="avatar" class="mx-auto thumbnail-transparent thumbnail-sm img-thumbnail img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-10 col-md-9 col-8">
+                        <h4 class="mb-4">
+                            <span data-t="">Total photos:</span>
+                            <b>{{photoCounter}}</b>
+                        </h4>
+                        <div :class="statusCss">
+                            <span class="member-badge badge">{{friendStatusTitle}}</span>
+                            <button v-if="notFriend" @click="onInvite" type="button" class="btn-danger btn">
+                                <span data-t="">Invite</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
+
+                <tabs :items="['Albums', 'Friends']">
+                    <template #0>
+                        <albums :member="member"></albums>
+                    </template>
+                    <template #1>
+                        <friends :member="member"></friends>
+                    </template>
+                </tabs>
+            </template>
+
+            <div v-if="loading" class="loader">
+                <i class="fa fa-spinner fa-spin"></i>
             </div>
+        </div>
 
-            <div class="tabs form-tabs mt-4" data-id="tabs">
-                <div class="nav nav-tabs" role="tablist">
-                    <a class="nav-item nav-link active" href="#" role="tab" data-id="albums" data-t="">Albums</a>
-                    <a class="nav-item nav-link" href="#" role="tab" data-id="friends" data-t="">Friends</a>
-                </div>
-                <div class="tab-content">
-                    <div class="tab-pane model-group active" data-id="albums">
-                        <%- include('./_memberAlbums') %>
-                    </div>
-                    <div class="tab-pane model-group" data-id="friends">
-                        <%- include('./_memberFriends') %>
-                    </div>
-                </div>
-            </div>
-        </template>
-
-        <template data-id="error">
-            <div class="alert-danger alert">{{text}}</div>
-        </template>
-
-        <div class="loadable-content"></div>
-        <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
+        <modal-dialog ref="invitationModal" title="Invite to friends" size="md">
+            <template #body>
+                <comment-form ref="invitationForm"></comment-form>
+            </template>
+            <template #footer>
+                <button @click="onSendInvitation" class="btn-success btn" data-t="">Send</button>
+            </template>
+        </modal-dialog>
     </div>
-</div>
+</template>

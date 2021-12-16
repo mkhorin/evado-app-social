@@ -1,0 +1,40 @@
+<template id="comments">
+    <div class="loadable-container">
+
+        <div class="commands">
+            <button @click="onNew" type="button" class="btn btn-success">
+                <span data-t="">New</span>
+            </button>
+        </div>
+
+        <div class="comment-items">
+            <div v-for="item of items" class="comment-card">
+                <a @click.prevent="toMember(item.author)" href="#" class="comment-author">
+                    <span class="icon fa fa-user"></span>
+                    {{item.authorName}}
+                </a>
+                <div class="comment-date">{{item.date | datetime}}</div>
+                <div class="comment-text">{{item.text}}</div>
+            </div>
+        </div>
+
+        <pagination></pagination>
+
+        <div v-show="!loading && empty" class="alert-warning alert">
+            <span data-t="">No comments found</span>
+        </div>
+
+        <div v-show="loading" class="loader">
+            <i class="fa fa-spinner fa-spin"></i>
+        </div>
+
+        <modal-dialog ref="newModal" title="New comment" size="lg">
+            <template #body>
+                <comment-form ref="newForm"></comment-form>
+            </template>
+            <template #footer>
+                <button @click="onCreate" class="btn-success btn" data-t="">Create</button>
+            </template>
+        </modal-dialog>
+    </div>
+</template>

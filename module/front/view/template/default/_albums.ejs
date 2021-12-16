@@ -1,0 +1,27 @@
+<template id="albums">
+    <div class="loadable-container">
+
+        <div v-if="!empty" class="album-items">
+            <div v-for="item of items" :key="item.id" class="album-card">
+                <h3>
+                    <a @click.prevent="toAlbum(item.id)" href="#">{{item.name}}</a>
+                </h3>
+                <p>{{item.description}}</p>
+                <p>
+                    <span data-t="">Photos:</span>
+                    <b>{{item.photoCounter}}</b>
+                </p>
+            </div>
+        </div>
+
+        <pagination></pagination>
+
+        <div v-show="!loading && empty" class="alert-warning alert">
+            <span data-t="">No albums available</span>
+        </div>
+
+        <div v-show="loading" class="loader">
+            <i class="fa fa-spinner fa-spin"></i>
+        </div>
+    </div>
+</template>

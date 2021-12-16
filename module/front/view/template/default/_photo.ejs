@@ -1,36 +1,37 @@
+<template id="photo">
+    <div class="page">
+        <div class="loadable-container">
+            <template v-if="!loading && id">
 
-<div class="page" data-page="photo" data-handler="PhotoPage">
+                <breadcrumbs>
+                    <template #path>
+                        <li class="breadcrumb-item">
+                            <a @click.prevent="toMain" href="#" data-t="">Main</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a @click.prevent="toMember(member)" href="#" data-t="">Member</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a @click.prevent="toAlbum(album)" href="#" data-t="">Album</a>
+                        </li>
+                        <li class="breadcrumb-item" data-t="">Photo</li>
+                    </template>
+                </breadcrumbs>
 
-    <div class="photo loadable-container" data-handler="Photo">
+                <img :src="thumbnail" class="mx-auto img-thumbnail img-fluid" :alt="name">
 
-        <template data-id="photo">
-            <div class="page-head">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#" data-action="main" data-t="">Main</a></li>
-                    <li class="breadcrumb-item"><a href="#" data-action="member" data-id="{{owner}}" data-t="">Member</a></li>
-                    <li class="breadcrumb-item"><a href="#" data-action="album" data-id="{{album}}" data-t="">Album</a></li>
-                    <li class="breadcrumb-item" data-t="">Photo</li>
-                </ol>
-                <%- include('./_account') %>
+                <h1>{{name}}</h1>
+                <h5>{{text}}</h5>
+
+                <div class="block mt-4">
+                    <h4 class="block-title" data-t="">Photo comments</h4>
+                    <comments-photo :photo="photo"></comments-photo>
+                </div>
+            </template>
+
+            <div v-if="loading" class="loader">
+                <i class="fa fa-spinner fa-spin"></i>
             </div>
-
-            <img data-src="<%- _url('/api/base/file/thumbnail') %>?c=photo&id={{_id}}"
-                 class="mx-auto img-thumbnail img-fluid" alt="{{name}}">
-
-            <h1>{{name}}</h1>
-            <h5>{{text}}</h5>
-
-             <div class="block mt-4">
-                 <h3 class="block-title" data-t="">Photo comments</h3>
-                 <%- include('./_photoComments') %>
-            </div>
-        </template>
-
-        <template data-id="error">
-            <div class="alert-danger alert">{{text}}</div>
-        </template>
-
-        <div class="loadable-content"></div>
-        <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
+        </div>
     </div>
-</div>
+</template>

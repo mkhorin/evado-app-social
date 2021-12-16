@@ -1,26 +1,61 @@
 <%
 layout(_view.get('_layout/content'));
 
-script('front/vendor/front.min.js');
-script('front/script/module.js');
+script('front/vendor/vue/vue.js');
 
-const dataUrl = _url('/api/base/data/');
-const fileUrl = _url('/api/base/file/');
-const metaUrl = _url('/api/base/meta/');
+script('front/script/modelForm.js');
+script('front/script/commentForm.js');
+
+script('front/script/album.js');
+script('front/script/albums.js');
+script('front/script/breadcrumbs.js');
+script('front/script/comments.js');
+script('front/script/commentsAlbum.js');
+script('front/script/commentsPhoto.js');
+script('front/script/friends.js');
+script('front/script/member.js');
+script('front/script/members.js');
+script('front/script/mixin.js');
+script('front/script/modalDialog.js');
+script('front/script/modelFormAttr.js');
+script('front/script/modelFormText.js');
+script('front/script/pagination.js');
+script('front/script/photo.js');
+script('front/script/photos.js');
+script('front/script/tabs.js');
+
+script('front/script/front.js');
+
+const user = _controller.user;
 %>
+
+<%- include('./_album') %>
+<%- include('./_albums') %>
+<%- include('./_breadcrumbs') %>
+<%- include('./_comments') %>
+<%- include('./_friends') %>
+<%- include('./_member') %>
+<%- include('./_members') %>
+<%- include('./_modalDialog') %>
+<%- include('./_modelForm') %>
+<%- include('./_modelFormText') %>
+<%- include('./_pagination') %>
+<%- include('./_photo') %>
+<%- include('./_photos') %>
+<%- include('./_tabs') %>
 
 <%- include(_view.get('_part/signboard')) %>
 
-<div class="front"
-     data-guest="<%- _controller.user.isGuest() %>"
-     data-user="<%- _controller.user.getId() %>"
-     data-data-url="<%- dataUrl %>"
-     data-meta-url="<%- metaUrl %>">
+<div id="front"
+     data-user-id="<%- user.getId() %>"
+     data-auth-url="<%- _url('/auth/sign-in?returnUrl=/front') %>"
+     data-data-url="<%- _url('/api/base/data') %>"
+     data-file-url="<%- _url('/api/base/file') %>"
+     data-meta-url="<%- _url('/api/base/meta') %>"
+     data-thumbnail-url="<%- _url('/api/base/file/thumbnail') %>"
+     data-csrf="<%- _controller.getCsrfToken() %>">
 
-    <%- include('./_main') %>
-    <%- include('./_member') %>
-    <%- include('./_album') %>
-    <%- include('./_photo') %>
-    <%- include('./_newComment') %>
-    <%- include('./_invite') %>
+    <keep-alive include="members">
+        <componen :is="activePage" v-bind="activePageProps"></componen>
+    </keep-alive>
 </div>

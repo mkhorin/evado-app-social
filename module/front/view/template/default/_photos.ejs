@@ -1,0 +1,25 @@
+<template id="photos">
+    <div class="loadable-container">
+
+        <div v-if="!empty" class="photo-items">
+            <div v-for="item of items" :key="item.id" class="photo-card">
+                <a @click.prevent="toPhoto(item.id, album)" href="#">
+                    <img :src="item.thumbnail" class="img-thumbnail img-fluid" :alt="item.name">
+                </a>
+                <h4>
+                    <a @click.prevent="toPhoto(item.id)" href="#">{{item.name}}</a>
+                </h4>
+            </div>
+        </div>
+
+        <pagination></pagination>
+
+        <div v-show="!loading && empty" class="alert-warning alert">
+            <span data-t="">No photos available</span>
+        </div>
+
+        <div v-show="loading" class="loader">
+            <i class="fa fa-spinner fa-spin"></i>
+        </div>
+    </div>
+</template>

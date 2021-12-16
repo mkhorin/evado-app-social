@@ -4,41 +4,23 @@ body {
     --super-navbar-color: var(--dark-warning);
     --sidebar-width: 0;
 }
-.pagination {
-    margin-top: 30px;
-}
 .pagination > li > a {
     padding: 6px 12px;
 }
 .super-title {
-    margin-top: 30px;
+    margin-top: 2rem;
 }
 .subtitle {
-    margin: 20px 0 30px;
-    font-size: 18px;
+    margin: 1.5rem 0 2rem;
+    font-size: 1.2rem;
     color: #444;
 }
-.modal-footer {
-    text-align: center;
-}
 .block {
-    padding: 15px;
-    background: #fbfbfb;
+    padding: 1.2rem;
+    background: #fff;
 }
 .block-title {
-    margin: 5px 0 20px;
-}
-.tabs .nav-tabs {
-    margin: 0;
-}
-.tabs .tab-content {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-top: none;
-    padding: 20px 15px;
-}
-.commands {
-    margin-bottom: 25px;
+    margin: 0 0 2rem;
 }
 
 /* LOADABLE */
@@ -47,30 +29,27 @@ body {
     position: relative;
 }
 .loadable-container > .loader {
-    display: none;
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     z-index: 101;
-}
-.loadable-container.loading > .loader {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 /* PAGE */
 
-.page {
-    display: none;
-}
-.page.active {
-    display: block;
-}
 .page h1 {
     margin: 2rem 0;
+}
+.page-head {
+    position: relative;
+}
+.page > h4 {
+    color: #888;
 }
 .page > h3 {
     color: #888;
@@ -83,6 +62,21 @@ body {
 }
 .page .icon-title .img-thumbnail {
     margin: 0 2rem 1rem 0;
+}
+
+/* TABS */
+
+.tabs .nav-tabs {
+    margin: 0;
+}
+.tabs .tab-content {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    padding: 20px 15px;
+}
+.commands {
+    margin-bottom: 25px;
 }
 
 /* ACCOUNT */
@@ -190,10 +184,8 @@ body {
 .avatar-placeholder img {
     display: none;
 }
-.member [data-action="invite"] {
-    display: none;
-}
 .member-badge {
+    margin-right: 1rem;
     font-size: 1rem;
     padding: .5rem 1rem;
     color: #fff;
@@ -201,10 +193,6 @@ body {
 .status-no {
     display: flex;
     align-items: center;
-}
-.status-no [data-action="invite"] {
-    display: inline-block;
-    margin-left: 1rem;
 }
 .status-friend .member-badge {
     background-color: var(--dark-success);
