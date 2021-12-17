@@ -62,13 +62,6 @@ Vue.component('member', {
             this.friendStatus = data.friendStatus;
             this.friendStatusTitle = Jam.t(data.friendStatus_title, 'meta.class.member');
             this.photoCounter = data.photoCounter;
-        },
-        formatChildren (items) {
-            return items.map(item => ({
-                id: item._id,
-                icon: this.getThumbnailUrl('clipart', item.icon),
-                name: item.name
-            }));
         }
     },
     template: '#member'
