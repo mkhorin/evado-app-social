@@ -26,7 +26,7 @@
                 </div>
             </div>
 
-            <pagination></pagination>
+            <pagination @change="load"></pagination>
 
             <div v-show="!loading && empty" class="alert-warning alert">
                 <span data-t="">No members found</span>

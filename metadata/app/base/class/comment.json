@@ -22,7 +22,7 @@
       "orderNumber": 10,
       "actionBinder": {
         "show": [
-          "NOT EMPTY",
+          "notEmpty",
           "album"
         ]
       },
@@ -65,7 +65,7 @@
       "orderNumber": 20,
       "actionBinder": {
         "show": [
-          "NOT EMPTY",
+          "notEmpty",
           "photo"
         ]
       },

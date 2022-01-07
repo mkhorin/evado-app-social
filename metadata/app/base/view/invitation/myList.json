@@ -1,6 +1,6 @@
 {
   "filter": [
-    "OR",
+    "or",
     {
       "sender": "$user.meta.base.member"
     },

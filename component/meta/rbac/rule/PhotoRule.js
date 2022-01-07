@@ -26,7 +26,7 @@ module.exports = class PhotoRule extends Base {
             ...await friendClass.find({invitee: member}).column('initiator'),
             ...await friendClass.find({initiator: member}).column('invitee')
         ];
-        const condition = ['OR',
+        const condition = ['or',
             {access: 'all'},
             {access: 'some', members: member},
             {access: 'friends', owner: friends}

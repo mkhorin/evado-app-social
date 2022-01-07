@@ -1,13 +1,13 @@
 /**
  * @copyright Copyright (c) 2020 Maxim Khorin <maksimovichu@gmail.com>
+ *
+ * Member can read albums in All access
+ * Member can read albums in Friend access if he is a friend of the owner
+ * Member can read albums in Some access if he is in the member list
  */
 'use strict';
 
 const Base = require('evado/component/meta/rbac/rule/BaseRule');
-
-// member can read albums in All access
-// member can read albums in Friend access if he is a friend of the owner
-// member can read albums in Some access if he is in the member list
 
 module.exports = class AlbumRule extends Base {
 
@@ -43,7 +43,10 @@ module.exports = class AlbumRule extends Base {
         return this.getBaseMeta().getClass('member').find({user: this.getUserId()}).id();
     }
 
-    async getObjectFilter () { // filter objects in list
+    /**
+     * Filter objects in list
+     */
+    async getObjectFilter () {
         const member = await this.getUserMemberId();
         const meta = this.getBaseMeta();
         const albumClass = meta.getClass('album');
@@ -63,7 +66,7 @@ module.exports = class AlbumRule extends Base {
             }).ids());
         }
         return albums.length
-            ? ['OR', {access: 'all'}, {[albumClass.getKey()]: albums}]
+            ? ['or', {access: 'all'}, {[albumClass.getKey()]: albums}]
             : {access: 'all'};
     }
 };

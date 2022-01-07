@@ -9,6 +9,6 @@ module.exports = class Friends extends Base {
 
     apply (query, model) {
         const member = model.getId();
-        query.and(['OR', {initiator: member}, {invitee: member}]);
+        query.and(['or', {initiator: member}, {invitee: member}]);
     }
 };
