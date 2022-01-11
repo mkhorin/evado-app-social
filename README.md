@@ -1,7 +1,9 @@
-# Evado Social Network
+# Evado Social Network App
 
-An application built on [Evado Declarative Framework](https://github.com/mkhorin/evado) 
+A web application built on [Evado Declarative Framework](https://github.com/mkhorin/evado) 
 provides members to share and discuss photos.
+
+[![Web app built on Evado declarative framework](doc/evado-app.png)](http://nervebit.com)
 
 ## Docker installation
 
