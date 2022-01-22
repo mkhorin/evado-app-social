@@ -35,5 +35,5 @@ Object.assign(Jam.I18n.defaults, {
     'Photos': 'Фотографии',
     'Photos:': 'Фотографий:',
 
-    'Total photos:': 'Всего фото:',
+    'Total photos:': 'Всего фото:'
 });
