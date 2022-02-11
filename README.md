@@ -1,4 +1,4 @@
-# Evado Social Network App
+# Social Network App
 
 A web application built on [Evado Declarative Framework](https://github.com/mkhorin/evado) 
 provides members to share and discuss photos.
