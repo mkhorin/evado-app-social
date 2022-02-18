@@ -42,7 +42,7 @@ module.exports = class InviteFriendUtility extends Base {
             return true; // skip utility
         }
         const members = [member.getId(), userMember];
-        return invitationClass.findByState('pending').and({            
+        return invitationClass.findByState('pending').and({
             sender: members,
             recipient: members
         }).id();

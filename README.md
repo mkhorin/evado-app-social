@@ -1,6 +1,6 @@
 # Social Network App
 
-A web application built on [Evado Declarative Framework](https://github.com/mkhorin/evado) 
+A web application built on [Evado Declarative Framework](https://github.com/mkhorin/evado)
 provides members to share and discuss photos.
 
 [![Web app built on Evado declarative framework](doc/evado-app.png)](http://nervebit.com)
@@ -41,7 +41,7 @@ node console/start
 ```
 
 ## Usage
- 
+
 Web interface `http://localhost:3000`
 
 Sign in as member:
