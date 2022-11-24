@@ -1,40 +1,40 @@
 <template id="members">
-    <div class="page">
+  <div class="page">
 
-        <breadcrumbs></breadcrumbs>
+    <breadcrumbs></breadcrumbs>
 
-        <h1 data-t="">Members</h1>
+    <h1 data-t="">Members</h1>
 
-        <div class="loadable-container">
+    <div class="loadable-container">
 
-            <div class="member-list">
-                <div class="row">
-                    <div v-for="item of items" :key="item.id" class="col-md-6 col-lg-3">
-                        <div class="member-card">
-                            <a @click.prevent="toMember(item.id)" href="#">
-                                <img :src="item.avatar" class="img-thumbnail img-fluid" alt="">
-                            </a>
-                            <h3>
-                                <a @click.prevent="toMember(item.id)" href="#">{{item.name}}</a>
-                            </h3>
-                            <h4>
-                                <span data-t="">Photos:</span>
-                                <b>{{item.photoCounter}}</b>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
+      <div class="member-list">
+        <div class="row">
+          <div v-for="item of items" :key="item.id" class="col-md-6 col-lg-3">
+            <div class="member-card">
+              <a @click.prevent="toMember(item.id)" href="#">
+                <img :src="item.avatar" class="img-thumbnail img-fluid" alt="">
+              </a>
+              <h3>
+                <a @click.prevent="toMember(item.id)" href="#">{{item.name}}</a>
+              </h3>
+              <h4>
+                <span data-t="">Photos:</span>
+                <b>{{item.photoCounter}}</b>
+              </h4>
             </div>
-
-            <pagination @change="load"></pagination>
-
-            <div v-show="!loading && empty" class="alert-warning alert">
-                <span data-t="">No members found</span>
-            </div>
-
-            <div v-show="loading" class="loader">
-                <i class="fa fa-spinner fa-spin"></i>
-            </div>
+          </div>
         </div>
+      </div>
+
+      <pagination @change="load"></pagination>
+
+      <div v-show="!loading && empty" class="alert-warning alert">
+        <span data-t="">No members found</span>
+      </div>
+
+      <div v-show="loading" class="loader">
+        <i class="fa fa-spinner fa-spin"></i>
+      </div>
     </div>
+  </div>
 </template>

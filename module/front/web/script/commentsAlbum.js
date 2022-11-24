@@ -14,7 +14,7 @@ Vue.component('comments-album', {
             };
         },
         setOwnerLink (data) {
-            data.album = {links: this.album};
+            data.album = this.album;
         }
     }
 });

@@ -14,7 +14,7 @@ Vue.component('comments-photo', {
             };
         },
         setOwnerLink (data) {
-            data.photo = {links: this.photo};
+            data.photo = this.photo;
         }
     }
 });

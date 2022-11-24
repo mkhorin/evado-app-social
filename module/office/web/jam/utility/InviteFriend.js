@@ -10,9 +10,10 @@ Jam.Utility.InviteFriend = class InviteFriendUtility extends Jam.Utility {
         Jam.dialog.show(content, {
             css: 'success',
             title: 'Invite to friends',
-            beforeSubmit: this.onBeforeSubmit.bind(this)
+            beforeSubmit: this.onBeforeSubmit.bind(this),
+            escaping: false
         });
-        this.$form = Jam.dialog.$container.find('.form');
+        this.$form = Jam.dialog.find('.form');
         this.$alert = this.$form.find('.alert');
         this.$text = this.$form.find('[name="text"]').focus();
         Jam.t(this.$form);

@@ -1,29 +1,29 @@
 <template id="friends">
-    <div class="loadable-container">
+  <div class="loadable-container">
 
-        <div class="friend-items">
-            <div v-for="item of items" class="friend-card">
-                <a @click.prevent="toMember(item.id)" class="thumbnail-link" href="#">
-                    <img :src="item.avatar" class="img-thumbnail img-fluid" alt="">
-                </a>
-                <h3>
-                    <a @click.prevent="toMember(item.id)" href="#">{{item.name}}</a>
-                </h3>
-                <h5>
-                    <span data-t="">Photos:</span>
-                    <b>{{item.photoCounter}}</b>
-                </h5>
-            </div>
-        </div>
-
-        <pagination @change="load"></pagination>
-
-        <div v-show="!loading && empty" class="alert-warning alert">
-            <span data-t="">No friends found</span>
-        </div>
-
-        <div v-show="loading" class="loader">
-            <i class="fa fa-spinner fa-spin"></i>
-        </div>
+    <div class="friend-items">
+      <div v-for="item of items" class="friend-card">
+        <a @click.prevent="toMember(item.id)" class="thumbnail-link" href="#">
+          <img :src="item.avatar" class="img-thumbnail img-fluid" alt="">
+        </a>
+        <h3>
+          <a @click.prevent="toMember(item.id)" href="#">{{item.name}}</a>
+        </h3>
+        <h5>
+          <span data-t="">Photos:</span>
+          <b>{{item.photoCounter}}</b>
+        </h5>
+      </div>
     </div>
+
+    <pagination @change="load"></pagination>
+
+    <div v-show="!loading && empty" class="alert-warning alert">
+      <span data-t="">No friends found</span>
+    </div>
+
+    <div v-show="loading" class="loader">
+      <i class="fa fa-spinner fa-spin"></i>
+    </div>
+  </div>
 </template>

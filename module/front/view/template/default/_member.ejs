@@ -1,60 +1,60 @@
 <template id="member">
-    <div class="page">
+  <div class="page">
 
-        <breadcrumbs>
-            <template #path>
-                <li class="breadcrumb-item">
-                    <a @click.prevent="toMain" href="#" data-t="">Main</a>
-                </li>
-                <li class="breadcrumb-item" data-t="">Member</li>
-            </template>
-        </breadcrumbs>
+    <breadcrumbs>
+      <template #path>
+        <li class="breadcrumb-item">
+          <a @click.prevent="toMain" href="#" data-t="">Main</a>
+        </li>
+        <li class="breadcrumb-item" data-t="">Member</li>
+      </template>
+    </breadcrumbs>
 
-        <div class="loadable-container">
-            <template v-if="!loading && id">
+    <div class="loadable-container">
+      <template v-if="!loading && id">
 
-                <h1>{{name}}</h1>
+        <h1>{{name}}</h1>
 
-                <div class="row">
-                    <div class="col-lg-2 col-md-3 col-4">
-                        <img :src="avatar" class="mx-auto thumbnail-transparent thumbnail-sm img-thumbnail img-fluid" alt="">
-                    </div>
-                    <div class="col-lg-10 col-md-9 col-8">
-                        <h4 class="mb-4">
-                            <span data-t="">Total photos:</span>
-                            <b>{{photoCounter}}</b>
-                        </h4>
-                        <div :class="statusCss">
-                            <span class="member-badge badge">{{friendStatusTitle}}</span>
-                            <button v-if="notFriend" @click="onInvite" type="button" class="btn-danger btn">
-                                <span data-t="">Invite</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <tabs :items="['Albums', 'Friends']">
-                    <template #0>
-                        <albums :member="member"></albums>
-                    </template>
-                    <template #1>
-                        <friends :member="member"></friends>
-                    </template>
-                </tabs>
-            </template>
-
-            <div v-if="loading" class="loader">
-                <i class="fa fa-spinner fa-spin"></i>
+        <div class="row">
+          <div class="col-lg-2 col-md-3 col-4">
+            <img :src="avatar" class="mx-auto thumbnail-transparent thumbnail-sm img-thumbnail img-fluid" alt="">
+          </div>
+          <div class="col-lg-10 col-md-9 col-8">
+            <h4 class="mb-4">
+              <span data-t="">Total photos:</span>
+              <b>{{photoCounter}}</b>
+            </h4>
+            <div :class="statusCss">
+              <span class="member-badge badge">{{friendStatusTitle}}</span>
+              <button v-if="notFriend" @click="onInvite" type="button" class="btn-danger btn">
+                <span data-t="">Invite</span>
+              </button>
             </div>
+          </div>
         </div>
 
-        <modal-dialog ref="invitationModal" title="Invite to friends" size="md">
-            <template #body>
-                <comment-form ref="invitationForm"></comment-form>
-            </template>
-            <template #footer>
-                <button @click="onSendInvitation" class="btn-success btn" data-t="">Send</button>
-            </template>
-        </modal-dialog>
+        <tabs :items="['Albums', 'Friends']">
+          <template #0>
+            <albums :member="member"></albums>
+          </template>
+          <template #1>
+            <friends :member="member"></friends>
+          </template>
+        </tabs>
+      </template>
+
+      <div v-if="loading" class="loader">
+        <i class="fa fa-spinner fa-spin"></i>
+      </div>
     </div>
+
+    <modal-dialog ref="invitationModal" title="Invite to friends" size="md">
+      <template #body>
+        <comment-form ref="invitationForm"></comment-form>
+      </template>
+      <template #footer>
+        <button @click="onSendInvitation" class="btn-success btn" data-t="">Send</button>
+      </template>
+    </modal-dialog>
+  </div>
 </template>
