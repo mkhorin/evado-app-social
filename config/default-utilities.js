@@ -11,7 +11,7 @@ module.exports = {
         name: 'Invite to friends',
         enabled: true,
         css: 'btn-success',
-        frontClass: 'InviteFriend',
+        clientClass: 'InviteFriend',
         actions: ['update'],
         targetClass: 'member'
     }
