@@ -9,19 +9,23 @@ module.exports = class InvitationBehavior extends Base {
 
     async afterInsert () {
         const id = this.owner.getId();
-        const name = (await this.getRelated('sender')).header.resolve();
-        const recipient = (await this.getRelated('recipient')).get('user');
-        await this.module.notify('invited', recipient, {id, name});
+        const sender = await this.getRelated('sender');
+        const name = sender.header.resolve();
+        const recipient = await this.getRelated('recipient');
+        const user = recipient.get('user');
+        await this.module.notify('invited', user, {id, name});
     }
 
     async afterTransit (transition) {
         switch (transition.name) {
-            case 'accept':
+            case 'accept': {
                 await this.createFriend();
                 break;
-            case 'decline':
+            }
+            case 'decline': {
                 await this.notifySender('declined');
                 break;
+            }
         }
     }
 
@@ -38,8 +42,10 @@ module.exports = class InvitationBehavior extends Base {
     }
 
     async notifySender (notification) {
-        const name = (await this.getRelated('recipient')).header.resolve();
-        const recipient = (await this.getRelated('sender')).get('user');
-        await this.module.notify(notification, recipient, {name});
+        const recipient = await this.getRelated('recipient');
+        const name = recipient.header.resolve();
+        const sender = await this.getRelated('sender');
+        const user = sender.get('user');
+        await this.module.notify(notification, user, {name});
     }
 };

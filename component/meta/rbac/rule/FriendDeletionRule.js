@@ -17,7 +17,8 @@ module.exports = class FriendDeletionRule extends Base {
     }
 
     getUserMemberId () {
-        return this.getBaseMeta().getClass('member').find({user: this.getUserId()}).id();
+        const user = this.getUserId();
+        return this.getBaseMeta().getClass('member').find({user}).id();
     }
 };
 

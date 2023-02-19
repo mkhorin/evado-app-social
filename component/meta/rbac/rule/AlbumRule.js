@@ -28,19 +28,23 @@ module.exports = class AlbumRule extends Base {
     async checkFriendAccess (album) {
         const member = await this.getUserMemberId();
         const friends = [member, album.get('owner')];
-        return !!await album.class.meta.getClass('friend').find({
+        const friendClass = album.class.meta.getClass('friend');
+        const query = friendClass.find({
             initiator: friends,
             invitee: friends
-        }).id();
+        });
+        return !!await query.id();
     }
 
     async checkSomeAccess (album) {
         const member = await this.getUserMemberId();
-        return ArrayHelper.includes(member, album.get('members'));
+        const members = album.get('members');
+        return ArrayHelper.includes(member, members);
     }
 
     getUserMemberId () {
-        return this.getBaseMeta().getClass('member').find({user: this.getUserId()}).id();
+        const user = this.getUserId();
+        return this.getBaseMeta().getClass('member').find({user}).id();
     }
 
     /**
@@ -50,20 +54,22 @@ module.exports = class AlbumRule extends Base {
         const member = await this.getUserMemberId();
         const meta = this.getBaseMeta();
         const albumClass = meta.getClass('album');
-        const albums = await albumClass.find({
+        const albumQuery = albumClass.find({
             access: 'some',
             members: member
-        }).ids();
+        });
+        const albums = await albumQuery.ids();
         const friendClass = meta.getClass('friend');
-        const friends = [
-            ...await friendClass.find({invitee: member}).column('initiator'),
-            ...await friendClass.find({initiator: member}).column('invitee')
-        ];
+        const initiators = await friendClass.find({invitee: member}).column('initiator');
+        const invitees = await friendClass.find({initiator: member}).column('invitee');
+        const friends = [...initiators, ...invitees];
         if (friends.length) {
-            albums.push(...await albumClass.find({
+            const query = albumClass.find({
                 access: 'friends',
                 owner: friends
-            }).ids());
+            });
+            const ids = await query.ids();
+            albums.push(...ids);
         }
         return albums.length
             ? ['or', {access: 'all'}, {[albumClass.getKey()]: albums}]

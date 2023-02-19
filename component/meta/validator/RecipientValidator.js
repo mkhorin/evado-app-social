@@ -13,15 +13,18 @@ module.exports = class RecipientValidator extends Base {
         if (CommonHelper.isEqual(sender, recipient)) {
             return model.addError(name, 'Recipient cannot be the sender');
         }
-        const invitation = await model.class.findByState('pending').and({sender, recipient}).id();
+        const invitationQuery = model.class.findByState('pending').and({sender, recipient});
+        const invitation = await invitationQuery.id();
         if (invitation && !model.isId(invitation)) {
             return model.addError(name, 'Invitation already exists');
         }
         const members = [sender, recipient];
-        const friend = await model.class.meta.getClass('friend').find({
+        const friendClass = model.class.meta.getClass('friend');
+        const friendQuery = friendClass.find({
             initiator: members,
             invitee: members
-        }).id();
+        });
+        const friend = await friendQuery.id();
         if (friend) {
             return model.addError(name, 'Already friends');
         }

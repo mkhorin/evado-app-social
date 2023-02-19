@@ -8,24 +8,28 @@ const Base = require('areto/base/Base');
 module.exports = class FriendStatusExpression extends Base {
 
     async resolve (member) {
-        const userMemberId = await member.class.find({user: member.user.getId()}).id();
+        const user = member.user.getId();
+        const memberQuery = member.class.find({user});
+        const userMemberId = await memberQuery.id();
         if (!userMemberId || CommonHelper.isEqual(userMemberId, member.getId())) {
             return null;
         }
         const members = [member.getId(), userMemberId];
         const friendClass = member.class.meta.getClass('friend');
-        const friend = await friendClass.find({
+        const friendQuery = friendClass.find({
             initiator: members,
             invitee: members
-        }).id();
+        });
+        const friend = await friendQuery.id();
         if (friend) {
             return 'friend';
         }
         const invitationClass = member.class.meta.getClass('invitation');
-        const invitation = await invitationClass.findByState('pending').and({
+        const invitationQuery = invitationClass.findByState('pending').and({
             sender: members,
             recipient: members
-        }).id();
+        });
+        const invitation = await invitationQuery.id();
         if (invitation) {
             return 'pending';
         }

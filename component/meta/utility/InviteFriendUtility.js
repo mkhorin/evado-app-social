@@ -15,43 +15,52 @@ module.exports = class InviteFriendUtility extends Base {
         if (this.isUserId(model.get('user'))) {
             return false; // user member
         }
-        const userMember = await model.class.find({user: this.getUserId()}).id();
+        const user = this.getUserId();
+        const query = model.class.find({user});
+        const userMember = await query.id();
         if (await this.isFriends(model, userMember)) {
             return false; // already friends
         }
-        return !await this.hasInvitation(model, userMember);
+        const hasInvitation = await this.hasInvitation(model, userMember);
+        return !hasInvitation;
     }
 
-    isFriends (member, userMember) {
+    async isFriends (member, userMember) {
         const friendClass = member.class.meta.getClass('friend');
         if (!friendClass) {
             this.log('error', 'Class not found: friend');
             return true; // skip utility
         }
         const members = [member.getId(), userMember];
-        return friendClass.find({
+        const query = friendClass.find({
             initiator: members,
             invitee: members
-        }).id();
+        });
+        const id = await query.id();
+        return !!id;
     }
 
-    hasInvitation (member, userMember) {
+    async hasInvitation (member, userMember) {
         const invitationClass = member.class.meta.getClass('invitation');
         if (!invitationClass) {
             this.log('error', 'Class not found: invitation');
             return true; // skip utility
         }
         const members = [member.getId(), userMember];
-        return invitationClass.findByState('pending').and({
+        const query = invitationClass.findByState('pending').and({
             sender: members,
             recipient: members
-        }).id();
+        });
+        const id = await query.id();
+        return !!id;
     }
 
     async execute () {
         const data = await this.resolveMetaParams();
-        const senderId = await data.model.class.find({user: this.getUserId()}).id();
-        const invitation = await this.createModel(data.class.meta.getClass('invitation'));
+        const user = this.getUserId();
+        const senderId = await data.model.class.find({user}).id();
+        const invitationClass = data.class.meta.getClass('invitation');
+        const invitation = await this.createModel(invitationClass);
         invitation.set('sender', senderId);
         invitation.set('recipient', data.model.getId());
         invitation.set('text', this.postParams.text);

@@ -20,17 +20,22 @@ module.exports = class PhotoRule extends Base {
             return false;
         }
         const meta = photo.class.meta;
-        const member = await meta.getClass('member').find({user: this.getUserId()}).id();
+        const user = this.getUserId();
+        const memberClass = meta.getClass('member');
+        const memberQuery = memberClass.find({user});
+        const member = await memberQuery.id();
         const friendClass = meta.getClass('friend');
-        const friends = [
-            ...await friendClass.find({invitee: member}).column('initiator'),
-            ...await friendClass.find({initiator: member}).column('invitee')
-        ];
+        const initiators = await friendClass.find({invitee: member}).column('initiator');
+        const invitees = await friendClass.find({initiator: member}).column('invitee'); 
+        const friends = [...initiators, ...invitees];
         const condition = ['or',
             {access: 'all'},
             {access: 'some', members: member},
             {access: 'friends', owner: friends}
         ];
-        return !!await meta.getClass('album').findById(albums).and(condition).id();
+        const albumClass = meta.getClass('album');
+        const albumQuery = albumClass.findById(albums).and(condition);
+        const id = await albumQuery.id();
+        return !!id;
     }
 };

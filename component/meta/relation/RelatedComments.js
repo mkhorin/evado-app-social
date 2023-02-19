@@ -9,8 +9,10 @@ module.exports = class RelatedComments extends Base {
 
     async apply (query, model) {
         const owner = model.getId();
-        const album = await model.class.meta.getClass('album').find({owner}).ids();
-        const photo = await model.class.meta.getClass('photo').find({owner}).ids();
+        const albumClass = model.class.meta.getClass('album');
+        const album = await albumClass.find({owner}).ids();
+        const photoClass = model.class.meta.getClass('photo');
+        const photo = await photoClass.find({owner}).ids();
         return query.and(['or', {album}, {photo}]);
     }
 };
