@@ -26,13 +26,13 @@ Vue.component('members', {
             await this.load(0);
         },
         async load (page) {
+            const {pageSize} = this;
             const data = await this.fetchJson('list', {
                 class: 'member',
                 view: 'publicList',
-                length: this.pageSize,
-                start: page * this.pageSize
+                length: pageSize,
+                start: page * pageSize
             });
-            const pageSize = this.pageSize;
             this.$emit('load', {...data, pageSize, page});
         },
         onLoad ({items}) {

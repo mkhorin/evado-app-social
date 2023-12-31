@@ -19,7 +19,7 @@ module.exports = class PhotoRule extends Base {
         if (!albums.length) {
             return false;
         }
-        const meta = photo.class.meta;
+        const {meta} = photo.class;
         const user = this.getUserId();
         const memberClass = meta.getClass('member');
         const memberQuery = memberClass.find({user});

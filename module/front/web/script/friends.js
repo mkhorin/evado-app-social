@@ -27,6 +27,7 @@ Vue.component('friends', {
             await this.load(0);
         },
         async load (page) {
+            const {pageSize} = this;
             const data = await this.fetchJson('list', {
                 class: 'member',
                 view: 'publicList',
@@ -35,10 +36,9 @@ Vue.component('friends', {
                     attr: 'friendMembers',
                     id: this.member
                 },
-                length: this.pageSize,
-                start: page * this.pageSize
+                length: pageSize,
+                start: page * pageSize
             });
-            const pageSize = this.pageSize;
             this.$emit('load', {...data, pageSize, page});
         },
         onLoad ({items}) {
